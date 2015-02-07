@@ -8,3 +8,7 @@ Contributions are greatly appreciated. Please fork this repository and open a
 pull request to add snippets, make grammar tweaks, etc.
 
 >Still under development.
+
+>Update 1.1.0: Indent function and a few reserved words added.
+
+>To-do: Add more words, optimize code and delete unnecessary parts coming from old python code.
