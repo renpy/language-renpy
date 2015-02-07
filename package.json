@@ -6,13 +6,13 @@
     "node": "*"
   },
   "description": "Ren'py language support in Atom",
-  "homepage": "https://atom.github.io/language-python",
+  "homepage": "https://github.com/williamd1k0/language-renpy",
   "repository": {
     "type": "git",
-    "url": "https://github.com/atom/language-python.git"
+    "url": "https://github.com/williamd1k0/language-renpy.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/atom/language-python/issues"
+    "url": "https://github.com/williamd1k0/language-renpy/issues"
   }
 }
