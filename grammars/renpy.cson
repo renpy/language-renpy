@@ -1,20 +1,7 @@
-'scopeName': 'source.python'
-'name': 'Python'
+'scopeName': 'source.renpy'
+'name': 'RenPy'
 'fileTypes': [
-  'cpy'
-  'gyp'
-  'gypi'
-  'kv'
-  'py'
-  'pyw'
   'rpy'
-  'SConscript'
-  'SConstruct'
-  'Sconstruct'
-  'sconstruct'
-  'Snakefile'
-  'tac'
-  'wsgi'
 ]
 'firstLineMatch': '^#!/.*\\bpython\\b'
 'patterns': [
@@ -113,7 +100,7 @@
   {
     'comment': 'keywords that alter flow from within a block'
     'name': 'keyword.control.statement.python'
-    'match': '\\b(with|break|continue|pass|return|yield)\\b'
+    'match': '\\b(at|label|init|nvl|scene|show|screen|stop|play|$|define|image|voice|call|with|break|continue|pass|return|yield)\\b'
   }
   {
     'comment': 'keyword operators that evaluate to True or False'
