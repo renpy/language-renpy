@@ -1,11 +1,11 @@
 {
-  "name": "language-python",
-  "version": "0.30.0",
+  "name": "language-renpy",
+  "version": "0.1.0",
   "engines": {
     "atom": "*",
     "node": "*"
   },
-  "description": "Python language support in Atom",
+  "description": "Ren'py language support in Atom",
   "homepage": "https://atom.github.io/language-python",
   "repository": {
     "type": "git",
