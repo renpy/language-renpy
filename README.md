@@ -9,6 +9,7 @@ pull request to add snippets, make grammar tweaks, etc.
 
 * The highlight may vary depending on the syntax theme used.
 * Standard themes indicated: Atom Dark, One Dark and 16base Tomorrow Dark.
+* To have better functionality is advisable to install the plugin "autocomplete-plus."
 
 >Still under development.
 
