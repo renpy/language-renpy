@@ -1,4 +1,4 @@
-# Ren'Py language support in Atom 
+# Ren'Py language support in Atom  
 
 Adds syntax highlighting and snippets to Ren'Py files in Atom.
 
