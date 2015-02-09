@@ -1,4 +1,4 @@
-# Ren'Py language support in Atom  
+# Ren'Py language support in Atom  [![Build Status](https://travis-ci.org/williamd1k0/language-renpy.svg?branch=patch-1)](https://travis-ci.org/williamd1k0/language-renpy)
 
 Adds syntax highlighting and snippets to Ren'Py files in Atom.
 
