@@ -8,11 +8,13 @@ Contributions are greatly appreciated. Please fork this repository and open a
 pull request to add snippets, make grammar tweaks, etc.
 
 * The highlight may vary depending on the syntax theme used.
-* Standard themes indicated: Atom Dark, One Dark and 16base Tomorrow Dark.
+* Standard theme indicated: Atom Dark.
 * To have better functionality is advisable to install the plugin "autocomplete-plus."
 
 >Still under development.
 
 >Update 1.1.0: Indent function and a few reserved words added.
+
+>Update 1.2.0: More indent and reserved words added and deleting unnecessary code.
 
 >To-do: Add more words, optimize code and delete unnecessary parts coming from old python code.
