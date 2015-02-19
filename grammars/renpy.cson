@@ -100,12 +100,22 @@
   {
     'comment': 'keywords that alter flow from within a block'
     'name': 'keyword.control.statement.python'
-    'match': '\\b(at|label|init|nvl|scene|show|screen|stop|play|define|image|voice|call|jump|menu|imagemap|hotspot|text|add|key|use|bar|with|zorder|style|is|button|window|hbox|vbox|mousearea|imagebutton|config|break|continue|pass|return|yield)\\b'
+    'match': '\\b(at|label|init|nvl|scene|show|hide|screen|stop|play|define|image|voice|call|jump|menu|imagemap|hotspot|text|add|key|use|bar|with|zorder|style|is|button|window|hbox|vbox|mousearea|imagebutton|config)\\b'
   }
   {
-    'comment': 'keywords of screen statement'
+    'comment': 'renpy screen statement keywords'
     'name': 'support.type.python'
-    'match': '\\b(color|size|xpos|ypos|xanchor|yanchor|action|area|hovered|unhovered|xalign|yalign|idle|hover|ground|alpha|python|clicked|modal|text_style|default|spacing|yminimum|xminimum|ymaximum|xmaximum|yoffset|xoffset|has|who|what|tag|renpy|pos|value)\\b'
+    'match': '\\b(color|size|xpos|ypos|xanchor|yanchor|action|area|hovered|unhovered|xalign|yalign|idle|hover|ground|alpha|python|clicked|modal|text_style|default|spacing|yminimum|xminimum|ymaximum|xmaximum|yoffset|xoffset|has|who|what|tag|renpy|pos|value|theme)\\b'
+  }
+  {
+    'comment': 'renpy transform keywords'
+    'name': 'support.type.python'
+    'match': '\\b(transform|dissolve|Dissolve|fade|fadein|fadeout|Fade|position|Position|ease|easein|easeout|time|align|xalign|yalign|zoom|ui)\\b'
+  }
+  {
+    'comment': 'other renpy keywords'
+    'name': 'support.type.python'
+    'match': '\\b(Character|DynamicCharacter|python|music|sound|pause|Pause)\\b'
   }
   {
     'comment': 'keyword operators that evaluate to True or False'
