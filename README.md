@@ -17,4 +17,8 @@ pull request to add snippets, make grammar tweaks, etc.
 
 >Update 1.2.0: More indent and reserved words added and deleting unnecessary code.
 
->To-do: Add more words, optimize code and delete unnecessary parts coming from old python code.
+>Update 1.3.0: Added several keywords and classes; Added dollar-sign ($); Added more indent keywords; and code optimization.
+
+>To-do: Add more words and optimize code.
+
+>```Thanks to [Koroshiya](https://github.com/koroshiya)```
