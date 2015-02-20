@@ -21,4 +21,4 @@ pull request to add snippets, make grammar tweaks, etc.
 
 >To-do: Add more words and optimize code.
 
->```Thanks to [Koroshiya](https://github.com/koroshiya)```
+>Thanks to [Koroshiya](https://github.com/koroshiya)!
