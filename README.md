@@ -11,6 +11,7 @@ pull request to add snippets, make grammar tweaks, etc.
 * Standard theme indicated: Atom Dark.
 * To have better functionality is advisable to install the plugin `autocomplete-plus` and `autocomplete-snippets`(snippets for Ren'Py under development).
 * Other recommended plugin (just for styling): `file-icons`.
+
 >Still under development.
 
 >Update 1.1.0: Indent function and a few reserved words added.
