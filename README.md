@@ -9,8 +9,8 @@ pull request to add snippets, make grammar tweaks, etc.
 
 * The highlight may vary depending on the syntax theme used.
 * Standard theme indicated: Atom Dark.
-* To have better functionality is advisable to install the plugin "autocomplete-plus."
-
+* To have better functionality is advisable to install the plugin `autocomplete-plus` and `autocomplete-snippets`(snippets for Ren'Py under development).
+* Other recommended plugin (just for styling): `file-icons`.
 >Still under development.
 
 >Update 1.1.0: Indent function and a few reserved words added.
@@ -19,6 +19,6 @@ pull request to add snippets, make grammar tweaks, etc.
 
 >Update 1.3.0: Added several keywords and classes; Added dollar-sign ($); Added more indent keywords; and code optimization.
 
->To-do: Add more words and optimize code.
+>To-do: Add more words, add snippets, optimize code and create a Getting Started doc.
 
 >Thanks to [Koroshiya](https://github.com/koroshiya) and [PyTom](https://github.com/renpytom), of course!
