@@ -1,4 +1,4 @@
-'.source.python':
+'.source.renpy':
   '#!/usr/bin/env python':
     'prefix': 'env'
     'body': '#!/usr/bin/env python\n'
