@@ -23,3 +23,8 @@ pull request to add snippets, make grammar tweaks, etc.
 >To-do: Add more words, add snippets, optimize code and create a Getting Started doc.
 
 >Thanks to [Koroshiya](https://github.com/koroshiya) and [PyTom](https://github.com/renpytom), of course!
+
+## About Snippets:
+Snippets are pieces of code ready being examples.
+
+![Snippets](http://i.gyazo.com/e8adaed0ea77d69bc5fed058fb60951d.gif)
