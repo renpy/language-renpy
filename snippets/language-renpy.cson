@@ -1,104 +1,126 @@
 '.source.renpy':
-  '#!/usr/bin/env python':
+  '($) #!/usr/bin/env python':
     'prefix': 'env'
     'body': '#!/usr/bin/env python\n'
-  '# coding=utf-8':
+  '($) # coding=utf-8':
     'prefix': 'enc'
     'body': '# coding=utf-8\n'
-  'Assert Equal':
+  '($) Assert Equal':
     'prefix': 'ase'
     'body': 'self.assertEqual(${1:expected}, ${2:actual}${3:, \'${4:message}\'})$0'
-  'Assert Not Equal':
+  '($) Assert Not Equal':
     'prefix': 'asne'
     'body': 'self.assertNotEqual(${1:expected}, ${2:actual}${3:, \'${4:message}\'})$0'
-  'Assert Raises':
+  '($) Assert Raises':
     'prefix': 'asr'
     'body': 'self.assertRaises(${1:exception}, ${2:callable})$0'
-  'Assert True':
+  '($) Assert True':
       'prefix': 'ast'
       'body': 'self.assertTrue(${1:actual}${2:, \'${3:message}\'})$0'
-  'Assert False':
+  '($) Assert False':
      'prefix': 'asf'
      'body': 'self.assertFalse(${1:actual}${2:, \'${3:message}\'})$0'
-  'Assert Is':
+  '($) Assert Is':
      'prefix': 'asi'
      'body': 'self.assertIs(${1:expected}, ${2:actual}${3:, \'${4:message}\'})$0'
-  'Assert Is Not':
+  '($) Assert Is Not':
      'prefix': 'asint'
      'body': 'self.assertIsNot(${1:expected}, ${2:actual}${3:, \'${4:message}\'})$0'
-  'Assert Is None':
+  '($) Assert Is None':
      'prefix': 'asino'
      'body': 'self.assertIsNone(${1:actual}${2:, \'${3:message}\'})$0'
-  'Assert Is Not None':
+  '($) Assert Is Not None':
      'prefix': 'asinno'
      'body': 'self.assertIsNotNone(${1:actual}${2:, \'${3:message}\'})$0'
-  'Assert In':
+  '($) Assert In':
      'prefix': 'asin'
      'body': 'self.assertIn(${1:needle}, ${2:haystack}${3:, \'${4:message}\'})$0'
-  'Assert Not In':
+  '($) Assert Not In':
      'prefix': 'asni'
      'body': 'self.assertNotIn(${1:needle}, ${2:haystack}${3:, \'${4:message}\'})$0'
-  'Assert':
+  '($) Assert':
     'prefix': 'as'
     'body': 'self.assert_(${1:boolean expression}${2:, \'${3:message}\'})$0'
-  'Fail (a test)':
+  '($) Fail (a test)':
     'prefix': 'fail'
     'body': 'self.fail(\'${1:message}\')$0'
-  'New Class':
+  '($) New Class':
     'prefix': 'class'
     'body': 'class ${1:ClassName}(${2:object}):\n\t"""${3:docstring for $1}"""\n\tdef __init__(self, ${4:arg}):\n\t\t${5:super($1, self).__init__()}\n\t\tself.arg = arg\n\t\t$0'
-  'New Method':
+  '($) New Method':
     'prefix': 'defs'
     'body': 'def ${1:mname}(self, ${2:arg}):\n\t${3:pass}'
-  'New Function':
+  '($) New Function':
     'prefix': 'def'
     'body': 'def ${1:fname}(${2:arg}):\n\t${3:pass}'
-  'New Property':
+  '($) New Property':
     'prefix': 'property'
     'body': 'def ${1:foo}():\n    doc = "${2:The $1 property.}"\n    def fget(self):\n        ${3:return self._$1}\n    def fset(self, value):\n        ${4:self._$1 = value}\n    def fdel(self):\n        ${5:del self._$1}\n    return locals()\n$1 = property(**$1())$0'
-  'if':
+  '($) if':
     'prefix': 'if'
     'body': 'if ${1:condition}:\n\t${2:pass}'
-  'for':
+  '($) for':
     'prefix': 'for'
     'body': 'for ${1:value} in ${2:variable}:\n\t${3:pass}'
-  'while':
+  '($) while':
     'prefix': 'while'
     'body': 'while ${1:condition}:\n\t${2:pass}'
-  'Try/Except/Else/Finally':
+  '($) Try/Except/Else/Finally':
     'prefix': 'try'
     'body': 'try:\n\t${1:pass}\nexcept${2: ${3:Exception} as ${4:e}}:\n\t${5:raise}\nelse:\n\t${6:pass}\nfinally:\n\t${7:pass}'
-  'Try/Except/Else':
+  '($) Try/Except/Else':
     'prefix': 'try'
     'body': 'try:\n\t${1:pass}\nexcept ${2:Exception} as ${3:e}:\n\t${4:raise $3}\nelse:\n\t${5:pass}'
-  'Try/Except/Finally':
+  '($) Try/Except/Finally':
     'prefix': 'try'
     'body': 'try:\n\t${1:pass}\nexcept ${2:Exception} as ${3:e}:\n\t${4:raise $3}\nfinally:\n\t${5:pass}'
-  'Try/Except':
+  '($) Try/Except':
     'prefix': 'try'
     'body': 'try:\n\t${1:pass}\nexcept ${2:Exception} as ${3:e}:\n\t${4:raise $3}'
-  'List Comprehension':
+  '($) List Comprehension':
     'prefix': 'lc'
     'body': '[${1:value} for ${2:value} in ${3:variable}]'
-  'List Comprehension If Else':
+  '($) List Comprehension If Else':
     'prefix': 'lcie'
     'body': '[${1:value} if ${2:condition} else ${3:condition} for ${4:value} in ${5:variable}]'
-  'Dictionary Comprehension':
+  '($) Dictionary Comprehension':
     'prefix': 'dc'
     'body': '{${1:key}: ${2:value} for ${3:key}, ${4:value} in ${5:variable}}'
-  'PDB set trace':
+  '($) PDB set trace':
     'prefix': 'pdb'
     'body': 'import pdb; pdb.set_trace()\n'
-  'iPDB set trace':
+  '($) iPDB set trace':
     'prefix': 'ipdb'
     'body': 'import ipdb; ipdb.set_trace()\n'
-  '__magic__':
+  '($) __magic__':
     'prefix': '__'
     'body': '__${1:init}__'
-  'if __name__ == \'__main__\'':
+  '($) if __name__ == \'__main__\'':
     'prefix': 'ifmain'
     'body': 'if __name__ == \'__main__\':\n\t${1:main()}$0'
-'.source.python:not(.string)':
+## Renpy Snippets
+  'Choice Menu':
+    'prefix': 'menu'
+    'body': 'menu ${1:optionalName}:\n\t"${2:Say Statement}"\n\t"${3:Choice 1}":\n\t\t#block of code to run\n\t"${4:Choice 2}":\n\t\t#block of code to run'
+  'Label':
+    'prefix': 'label'
+    'body': 'label ${1:labelName}:\n\t${2:}'
+  'One Line Python':
+    'prefix': '1py'
+    'body': '$ ${1:#python statements}'
+  '1 Line Python':
+    'prefix': '$'
+    'body': '$ ${1:#python statements}'
+  'Python in Block':
+    'prefix': 'python'
+    'body': 'python:\n\t${1:}'
+  'Ren\'Py Docs':
+    'prefix': 'dochelp'
+    'body': '## Visit the site for documentation or help of Ren\'Py engine. ##\n## Documentation:\n\t"${1:http://www.renpy.org/doc/html/}"\n## Wiki-Old Documentation:\n\t"${2:http://www.renpy.org/wiki/renpy/Wiki_Home_Page}"\n## Forum:\n\t"${3:http://lemmasoft.renai.us/forums/viewforum.php?f=42}"\n\n## Warning: All snippets that start with ($) are for Python commands.'
+  '秘密':
+    'prefix': 'ひみつ'
+    'body': '"使用このいただきありがとうございます。"'
+'.source.renpy:not(.string)':
   'self':
     'prefix': '.'
     'body': 'self.'
