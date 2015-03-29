@@ -27,4 +27,6 @@ pull request to add snippets, make grammar tweaks, etc.
 ## About Snippets:
 Snippets are pieces of code ready being examples.
 
+To test or contribute to snippets download using the branch "snippets".
+
 ![Snippets](http://i.gyazo.com/e8adaed0ea77d69bc5fed058fb60951d.gif)
