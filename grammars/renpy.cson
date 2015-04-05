@@ -146,7 +146,7 @@
   {
     'comment': 'transitions renpy keywords'
     'name': 'support.type.python'
-    'match': '\\b(fade|dissolve|pixellate|move|moveinright|moveinleft|moveintop|moveinbottom|moveoutright|moveoutleft|moveouttop|moveoutbottom|ease|easeinright|easeinleft|easeintop|easeinbottom|easeoutright|easeoutleft|easeouttop|easeoutbottom|zoomin|zoomout|zoominout|vpunch|hpunch|blinds|squares|wipeleft|wiperight|wipeup|wipedown|slideleft|slideright|slideup|slidedown|slideawayleft|slideawayright|slideawayup|slideawaydown|irisin)\\b'
+    'match': '\\b(fade|dissolve|pixellate|move|moveinright|moveinleft|moveintop|moveinbottom|moveoutright|moveoutleft|moveouttop|moveoutbottom|ease|easeinright|easeinleft|easeintop|easeinbottom|easeoutright|easeoutleft|easeouttop|easeoutbottom|zoomin|zoomout|zoominout|vpunch|hpunch|blinds|squares|wipeleft|wiperight|wipeup|wipedown|slideleft|slideright|slideup|slidedown|slideawayleft|slideawayright|slideawayup|slideawaydown|irisin|irisout)\\b'
   }
 
 # Transform Properties Ren'Py Keywords. View(http://www.renpy.org/doc/html/atl.html#transform-properties)

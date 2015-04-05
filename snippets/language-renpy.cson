@@ -120,6 +120,15 @@
   'Python in Block':
     'prefix': 'python'
     'body': 'python:\n\t${1:}'
+  'Create a Character':
+    'prefix': 'char'
+    'body': 'define ${1:characterName} = Character("${2:displayableName}")'
+  'Create a Character (NVL)':
+    'prefix': 'charnvl'
+    'body': 'define ${1:characterName} = Character(None, kind=nvl)\n${2:}'
+  'PreDefined Transitions':
+    'prefix': 'transitions'
+    'body': '${1:fade, dissolve, pixellate, move,\nmoveinright (Also: moveinleft, moveintop, moveinbottom),\nmoveoutright (Also: moveoutleft, moveouttop, moveoutbottom),\nease (Also: easeinright, easeinleft, easeintop, easeinbottom, easeoutright, easeoutleft, easeouttop, easeoutbottom),\nzoomin, zoomout, zoominout, vpunch, hpunch, blinds, squares,\nwipeleft (Also: wiperight, wipeup, wipedown),\nslideleft (Also:  slideright, slideup, slidedown),\nslideawayleft (Also: slideawayright, slideawayup, slideawaydown),\nirisin, irisout.}'
   '[$] Movie Cutscene (All Plataforms)':
     'prefix': 'cutscene'
     'body': '$ renpy.movie_cutscene(\'${1:fileName.extension}\')'
