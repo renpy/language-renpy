@@ -1,5 +1,7 @@
 # Ren'Py language support in Atom  [![Build Status](https://travis-ci.org/williamd1k0/language-renpy.svg?branch=patch-1)](https://travis-ci.org/williamd1k0/language-renpy)
 
+[![Join the chat at https://gitter.im/williamd1k0/language-renpy](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/williamd1k0/language-renpy?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Adds syntax highlighting and snippets to Ren'Py files in Atom.
 
 Originally converted from the [Python package for Atom](https://github.com/atom/language-python).
