@@ -147,9 +147,31 @@
   'Ren\'Py Docs':
     'prefix': 'dochelp'
     'body': '## Visit the site for documentation or help of Ren\'Py engine. ##\n## Documentation:\n\t"${1:http://www.renpy.org/doc/html/}"\n## Wiki-Old Documentation:\n\t"${2:http://www.renpy.org/wiki/renpy/Wiki_Home_Page}"\n## Forum:\n\t"${3:http://lemmasoft.renai.us/forums/viewforum.php?f=42}"\n\n## Warning: All snippets that start with [Py] are for Python commands and [$] are for One Line Python.'
-  '秘密':
-    'prefix': 'ひみつ'
-    'body': '"使用このいただきありがとうございます。"'
+## Transitions
+  '[T] Fade':
+    'prefix': 'withfade'
+    'body': 'with fade'
+  '[T] Dissolve':
+    'prefix': 'withdissolve'
+    'body': 'with dissolve'
+  '[T] Pixellate':
+    'prefix': 'withpixel'
+    'body': 'with pixellate'
+  '[T] Move':
+    'prefix': 'withmove'
+    'body': 'with move'
+  '[T] Move in Right':
+    'prefix': 'withmoveinright'
+    'body': 'with moveinright'
+  '[T] Move in Left':
+    'prefix': 'withmoveinleft'
+    'body': 'with moveinleft'
+  '[T] Move in Top':
+    'prefix': 'withmoveintop'
+    'body': 'with moveintop'
+  '[T] Move in Bottom':
+    'prefix': 'withmoveinbottom'
+    'body': 'with moveinbottom'
 '.source.renpy:not(.string)':
   'self':
     'prefix': '.'

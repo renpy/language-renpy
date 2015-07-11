@@ -100,17 +100,17 @@
   {
     'comment': 'keywords that alter flow from within a block'
     'name': 'keyword.control.statement.python'
-    'match': '\\b(function|nvl|block|choice|parallel|contains|on|voice|imagemap|hotspot|text|add|key|use|bar|with|style|is|button|window|hbox|vbox|mousearea|imagebutton|config)\\b'
+    'match': '\\b(function|nvl|block|choice|parallel|contains|on|voice|imagemap|hotspot|text|frame|textbutton|grid|add|key|use|bar|with|is|button|window|hbox|vbox|mousearea|imagebutton|config)\\b'
   }
   {
     'comment': 'renpy screen statement keywords'
     'name': 'support.type.python'
-    'match': '\\b(kind|color|action|area|hovered|unhovered|idle|hover|ground|python|clicked|modal|text_style|default|spacing|yminimum|xminimum|ymaximum|xmaximum|has|who|what|tag|value|theme)\\b'
+    'match': '\\b(kind|color|action|area|hovered|unhovered|python|clicked|modal|text_style|default|yminimum|xminimum|ymaximum|xmaximum|has|who|what|tag|value|theme)\\b'
   }
   {
     'comment': 'renpy transform keywords'
     'name': 'support.type.python'
-    'match': '\\b(repeat|transform|fadein|fadeout|position|Position|easein|easeout|time|align|xalign|yalign|ui)\\b'
+    'match': '\\b(repeat|transform|fadein|fadeout|position|Position|easein|easeout|time|ui)\\b'
   }
   {
     'comment': 'other renpy keywords'
@@ -153,8 +153,8 @@
 
   {
     'comment': 'transform properties renpy keywords'
-    'name': 'support.type.python'
-    'match': '\\b(pos|xpos|ypos|anchor|xanchor|yanchor|align|xalign|yalign|xoffset|yoffset|xcenter|ycenter|rotate|rotate_pad|transform_anchor|zoom|xzoom|yzoom|nearest|alpha|additive|around|alignaround|angle|radius|crop|crop_relative|corner1|corner2|size|subpixel|delay|events)\\b'
+    'name': 'variable.parameter.function.python'
+    'match': '\\b(ground|idle|hover|focus_mask|hover_sound|activate_sound|style|spacing|text_align|size_group|layout|style_group|background|ypadding|xpadding|idle_color|hover_color|selected_idle_color|selected_hover_color|insensitive_color|xfill|xmargin|pos|xpos|ypos|anchor|xanchor|yanchor|align|xalign|yalign|xoffset|yoffset|xcenter|ycenter|rotate|rotate_pad|transform_anchor|zoom|xzoom|yzoom|nearest|alpha|additive|around|alignaround|angle|radius|crop|crop_relative|corner1|corner2|size|subpixel|delay|events)\\b'
   }
 
 #  Movie Ren'Py Keywords. View(http://www.renpy.org/doc/html/movie.html)
@@ -335,7 +335,7 @@
     'beginCaptures':
       '1':
         'name': 'keyword.control.statement.python'
-    'end': '(\\n)'
+    'end': '(\\n|\\()|#'
     'endCaptures':
       '1':
         'name': 'punctuation.definition.inheritance.end.python'
@@ -385,7 +385,7 @@
     'beginCaptures':
       '1':
         'name': 'keyword.control.statement.python'
-    'end': '(\\:)'
+    'end': '(\\:|\\()|#'
     'endCaptures':
       '1':
         'name': 'punctuation.definition.inheritance.end.python'
@@ -411,7 +411,7 @@
           '1':
             'name': 'punctuation.definition.inheritance.begin.python'
         'contentName': 'meta.class.inheritance.python'
-        'end': '(?=\\)|:)'
+        'end': '(?=\\)|:|)'
         'patterns': [
           {
             'begin': '(?<=\\(|,)\\s*'
@@ -747,6 +747,10 @@
   }
   {
     'match': '\\b(None|True|False|Ellipsis|NotImplemented)\\b'
+    'name': 'constant.language.python'
+  }
+  {
+    'match': '\\b(no_action|yes_action|no_action)\\b'
     'name': 'constant.language.python'
   }
   {
