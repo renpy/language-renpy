@@ -185,11 +185,11 @@
 
 # Image displaying functions Ren'Py Keywords. View(http://www.renpy.org/doc/html/displaying_images.html)
 
-  {
-    'comment': 'image statements renpy keywords'
-    'name': 'keyword.control.statement.python'
-    'match': '\\b(hide|show)\\b'
-  }
+# {
+#    'comment': 'image statements renpy keywords'
+#    'name': 'keyword.control.statement.python'
+#    'match': '\\b(hide|show)\\b'
+#  }
   {
     'comment': 'show statements renpy keywords'
     'name': 'support.type.python'
@@ -386,7 +386,7 @@
     ]
   }
   {
-    'begin': '((define)|(image)|(scene))\\s+((\\s)|(?=[a-zA-Z_][a-zA-Z_0-9]*\\s*))'
+    'begin': '((define)|(image)|(scene)|(show)|(hide))\\s+((\\s)|(?=[a-zA-Z_][a-zA-Z_0-9]*\\s*))'
     'beginCaptures':
       '1':
         'name': 'keyword.control.statement.python'
@@ -436,7 +436,7 @@
     ]
   }
   {
-    'begin': '^\\s*((label)|(menu))\\s+(?=[a-zA-Z_][a-zA-Z_0-9]*\\s*)'
+    'begin': '^\\s*((label)|(menu))\\s?*((?=[a-zA-Z_][a-zA-Z_0-9]*)\\s*)'
     'beginCaptures':
       '1':
         'name': 'keyword.control.statement.python'
@@ -934,8 +934,11 @@
   'builtin_types':
     'match': '(?x)\\b(\n\t\t\t\tbasestring|bool|buffer|bytearray|bytes|complex|dict|float|frozenset|int|\n\t\t\t\tlist|long|memoryview|object|range|set|slice|str|tuple|unicode|xrange\n\t\t\t)\\b'
     'name': 'support.type.python'
+#  'constant_placeholder':
+#    'match': '(?i:(%(\\([a-z_]+\\))?#?0?\\-?[ ]?\\+?([0-9]*|\\*)(\\.([0-9]*|\\*))?([hL][a-z]|[a-z%]))|(\\{([!\\[\\].:\\w ]+)?\\}))'
+#    'name': 'constant.other.placeholder.python'
   'constant_placeholder':
-    'match': '(?i:(%(\\([a-z_]+\\))?#?0?\\-?[ ]?\\+?([0-9]*|\\*)(\\.([0-9]*|\\*))?([hL][a-z]|[a-z%]))|(\\{([!\\[\\].:\\w ]+)?\\}))'
+    'match': '(?i:(%(\\([a-z_]+\\))?#?0?\\-?[ ]?\\+?([0-9]*|\\*)(\\.([0-9]*|\\*))?([hL][a-z]|[a-z%]))|(\\{([!\\[\\].:\\w ]+)?\\})|(\\{\\/([!\\[\\].:\\w ]+)?\\})|(\\[([!\\[\\].:\\w ]+)?\\]))'
     'name': 'constant.other.placeholder.python'
   'docstrings':
     'patterns': [
@@ -1304,7 +1307,7 @@
           '2':
             'name': 'punctuation.definition.string.begin.python'
         'comment': 'double-quoted raw string'
-        'end': '((?<=")(")|")|(\\n)'
+        'end': '((?<=")(")|")'
         'endCaptures':
           '1':
             'name': 'punctuation.definition.string.end.python'
@@ -1377,7 +1380,7 @@
           '2':
             'name': 'punctuation.definition.string.begin.python'
         'comment': 'double quoted unicode string'
-        'end': '((?<=")(")|")|(\\n)'
+        'end': '((?<=")(")|")'
         'endCaptures':
           '1':
             'name': 'punctuation.definition.string.end.python'
@@ -1478,7 +1481,7 @@
           '1':
             'name': 'punctuation.definition.string.begin.python'
         'comment': 'double quoted string'
-        'end': '((?<=")(")|")|(\\n)'
+        'end': '((?<=")(")|")'
         'endCaptures':
           '1':
             'name': 'punctuation.definition.string.end.python'
@@ -1672,7 +1675,7 @@
           '2':
             'name': 'punctuation.definition.string.begin.python'
         'comment': 'single quoted raw string'
-        'end': '(\')|(\\n)'
+        'end': '(\')'
         'endCaptures':
           '1':
             'name': 'punctuation.definition.string.end.python'
@@ -1741,7 +1744,7 @@
           '2':
             'name': 'punctuation.definition.string.begin.python'
         'comment': 'single quoted unicode string'
-        'end': '(\')|(\\n)'
+        'end': '(\')'
         'endCaptures':
           '1':
             'name': 'punctuation.definition.string.end.python'
@@ -1838,7 +1841,7 @@
           '1':
             'name': 'punctuation.definition.string.begin.python'
         'comment': 'single quoted string'
-        'end': '(\')|(\\n)'
+        'end': '(\')'
         'endCaptures':
           '1':
             'name': 'punctuation.definition.string.end.python'
