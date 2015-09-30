@@ -152,7 +152,7 @@
     'body': 'jump ${1:labelName}'
   'Ren\'Py Docs':
     'prefix': 'dochelp'
-    'body': '## Visit the site for documentation or help of Ren\'Py engine. ##\n## Documentation:\n\t"${1:http://www.renpy.org/doc/html/}"\n## Wiki-Old Documentation:\n\t"${2:http://www.renpy.org/wiki/renpy/Wiki_Home_Page}"\n## Forum:\n\t"${3:http://lemmasoft.renai.us/forums/viewforum.php?f=42}"\n\n## Warning: All snippets that start with [Py] are for Python commands and [$] are for One Line Python.'
+    'body': '## Visit the site for documentation or help of Ren\'Py engine. ##\n## Documentation:\n\t"${1:http://www.renpy.org/doc/html/}"\n## Wiki-Old Documentation:\n\t"${2:http://www.renpy.org/wiki/renpy/Wiki_Home_Page}"\n## Forum:\n\t"${3:http://lemmasoft.renai.us/forums/viewforum.php?f=42}"\n## Package Documentation:\n\t"${4:https://github.com/williamd1k0/language-renpy#getting-started}"\n\n## Warning: All snippets that start with [Py] are for Python commands and [$] are for One Line Python.'
 ## Transitions
   '[T] Fade':
     'prefix': 'wFade'
