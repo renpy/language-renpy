@@ -112,14 +112,20 @@
     'prefix': 'label'
     'body': 'label ${1:labelName}:\n\t${2:}'
   'One Line Python':
-    'prefix': '1py'
+    'prefix': 'p1'
     'body': '$ ${1:#python statements}'
   '1 Line Python':
     'prefix': '$'
     'body': '$ ${1:#python statements}'
   'Python in Block':
-    'prefix': 'python'
+    'prefix': 'py'
     'body': 'python:\n\t${1:}'
+  'Init Block':
+    'prefix': '\nini'
+    'body': 'init ${1:#priority number}:\n\t${2:}'
+  'Init with Python Block':
+    'prefix': '\ninipy'
+    'body': 'init ${1:#priority number} python:\n\t${2:}'
   'Create a Character':
     'prefix': 'char'
     'body': 'define ${1:characterName} = Character("${2:displayableName}")'
@@ -149,28 +155,28 @@
     'body': '## Visit the site for documentation or help of Ren\'Py engine. ##\n## Documentation:\n\t"${1:http://www.renpy.org/doc/html/}"\n## Wiki-Old Documentation:\n\t"${2:http://www.renpy.org/wiki/renpy/Wiki_Home_Page}"\n## Forum:\n\t"${3:http://lemmasoft.renai.us/forums/viewforum.php?f=42}"\n\n## Warning: All snippets that start with [Py] are for Python commands and [$] are for One Line Python.'
 ## Transitions
   '[T] Fade':
-    'prefix': 'withfade'
+    'prefix': 'wFade'
     'body': 'with fade'
   '[T] Dissolve':
-    'prefix': 'withdissolve'
+    'prefix': 'wDissolve'
     'body': 'with dissolve'
   '[T] Pixellate':
-    'prefix': 'withpixel'
+    'prefix': 'wPixel'
     'body': 'with pixellate'
   '[T] Move':
-    'prefix': 'withmove'
+    'prefix': 'wMove'
     'body': 'with move'
   '[T] Move in Right':
-    'prefix': 'withmoveinright'
+    'prefix': 'wMoveInRight'
     'body': 'with moveinright'
   '[T] Move in Left':
-    'prefix': 'withmoveinleft'
+    'prefix': 'wMoveInLeft'
     'body': 'with moveinleft'
   '[T] Move in Top':
-    'prefix': 'withmoveintop'
+    'prefix': 'wMoveInTop'
     'body': 'with moveintop'
   '[T] Move in Bottom':
-    'prefix': 'withmoveinbottom'
+    'prefix': 'wMoveInBottom'
     'body': 'with moveinbottom'
 '.source.renpy:not(.string)':
   'self':
