@@ -3,7 +3,7 @@
 'fileTypes': [
   'rpy'
 ]
-'firstLineMatch': '^#!/.*\\bpython\\b'
+'firstLineMatch': '^#!/.*\\brenpy\\b'
 'patterns': [
   {
     'begin': '(^[ \\t]+)?(?=#)'
@@ -134,6 +134,11 @@
     'comment': 'python statements renpy keywords'
     'name': 'support.type.python'
     'match': '\\b(python|renpy|store|persistent|config)\\b'
+  }
+  {
+    'comment': 'python statements renpy keywords'
+    'name': 'pythonblock.support.type.python'
+    'match': '\\b(python)\\b'
   }
   {
     'comment': 'init statements renpy keywords'
