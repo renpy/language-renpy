@@ -1,3 +1,6 @@
+## 1.5.1
+Fix bugs with <kbd>from</kbd> and <kbd>return</kbd> keywords;
+
 ## 1.5.0
 Add more snippets;
 
@@ -25,10 +28,10 @@ Added dollar-sign <kbd>$</kbd>;
 
 Added more indent keywords;
 
-Code optimization.
+Code optimization;
 
 ## 1.2.0:
-More indent and reserved words added and deleting unnecessary code.
+More indent and reserved words added and deleting unnecessary code;
 
 ## 1.1.0:
-Indent function and a few reserved words added.
+Indent function and a few reserved words added;
