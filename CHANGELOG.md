@@ -1,3 +1,10 @@
+## 1.5.0
+Add more snippets;
+
+Improvement in some snippets;
+
+Code improvements;
+
 ## 1.4.0:
 Snippets implementations;
 
