@@ -15,11 +15,9 @@ pull request to add snippets, make grammar tweaks, etc.
 * To have better functionality is advisable to ~~install~~ (the following plugins are now included in the Atom >1.0) the plugins `autocomplete-plus` and `autocomplete-snippets`.
 * Other recommended plugin (just for styling): `file-icons`.
 
->Still under development.
+>Ren'Py is a Visual Novel development tool, available from [www.renpy.org](http://www.renpy.org/)
 
-> TODO: Getting Started doc.
-
->Thanks to [Koroshiya](https://github.com/koroshiya) and [PyTom](https://github.com/renpytom), of course!
+>Thanks to [Koroshiya](https://github.com/koroshiya) (Sublime-Renpy) and [PyTom](https://github.com/renpytom) (Ren'py), of course!
 
 ## Getting Started
 >TODO
