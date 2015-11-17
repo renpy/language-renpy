@@ -1,3 +1,6 @@
+## 1.5.3
+Add basic documentation (EN and PT-BR).
+
 ## 1.5.2
 Fix Atom didn't recognize Renpy .rpy files at startup.
 
