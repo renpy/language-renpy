@@ -17,14 +17,39 @@ pull request to add snippets, make grammar tweaks, etc.
 
 >Ren'Py is a Visual Novel development tool, available from [www.renpy.org](http://www.renpy.org/)
 
->Thanks to [Koroshiya](https://github.com/koroshiya) (Sublime-Renpy) and [PyTom](https://github.com/renpytom) (Ren'py), of course!
+>Thanks to [Koroshiya](https://github.com/koroshiya) (Sublime-Renpy) and [PyTom](https://github.com/renpytom) (Ren'Py), of course!
 
 ## Getting Started
->TODO
+
+### Installation
+
+With [Atom](https://atom.io/) already installed, open the Settings tab: `File`>`Settings` (or with <kbd>Ctrl</kbd>+<kbd>,</kbd>)
+
+Click in <kbd>+ Install</kbd> and search for `renpy` then click in <kbd>Install</kbd> button of the package `language-renpy`.
+
+It's also possible installing using the cmd command `apm` (atom package manager):
+```sh
+apm install language-renpy
+```
+
+### Usage
+
+Open a `.rpy` file or create a new one and test the syntax highlighting of the Ren'Py. Also use the [example file](https://github.com/williamd1k0/language-renpy/blob/master/example.rpy) available on the package repository.
+
+Snippets:
+
+Snippets are pieces of code like in the following example.
 
 ## Snippets:
-> TODO
 
-Snippets are pieces of code ready being examples.
+Snippets are pieces of code like in the following example.
 
-![Snippets](http://i.imgur.com/XIlsFjr.gif)
+![Snippets](http://i.imgur.com/J6Y17rA.gif)
+
+The usage is done with keywords followed by a <kbd>Tab</kbd> to insert the snippet.
+
+For example, there's a snippet with useful links, type `dochelp` and press <kbd>Tab</kbd> or <kbd>Enter</kbd>.
+
+You can check the snippets list with Atom, being at the tab of a `.rpy` file and pressing <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>S</kbd> or going to the package settings (`Settings`>`Packages`>`language-renpy`>`Snippets`).
+
+Snippets are added by need, so suggestions are welcomed. Use the [repository issue](https://github.com/williamd1k0/language-renpy/issues/6) to leave your suggestion or send a message to `tumeowilliam@gmail.com`.

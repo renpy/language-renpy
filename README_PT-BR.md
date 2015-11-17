@@ -17,7 +17,7 @@ Contribuições são muito apreciados. Por gentileza, faça um fork do repositó
 
 >Ren'Py é uma ferramenta de desenvolvimento de Visual Novel, disponível em [www.renpy.org](http://www.renpy.org/)
 
->Agradecimentos a [Koroshiya](https://github.com/koroshiya) (Sublime-Renpy) e [PyTom](https://github.com/renpytom) (Ren'py), é claro!
+>Agradecimentos a [Koroshiya](https://github.com/koroshiya) (Sublime-Renpy) e [PyTom](https://github.com/renpytom) (Ren'Py), é claro!
 
 ## Como Começar
 
@@ -25,9 +25,9 @@ Contribuições são muito apreciados. Por gentileza, faça um fork do repositó
 
 Com o [Atom](https://atom.io/) já instalado, abra a aba de Configurações: `File`>`Settings` (ou com o atalho <kbd>Ctrl</kbd>+<kbd>,</kbd>).
 
-Clique em `+ Install` e pesquise por `renpy` e então clique no `Install` do pacote `language-renpy`.
+Clique em <kbd>+ Install</kbd> e pesquise por `renpy` e então clique no botão <kbd>Install</kbd> do pacote `language-renpy`.
 
-Também é possível instalar usando o comando do terminal/prompt `apm`(atom package manager):
+Também é possível instalar usando o comando do terminal/prompt `apm` (atom package manager):
 ```sh
 apm install language-renpy
 ```
@@ -41,7 +41,7 @@ Use também o [arquivo de exemplo](https://github.com/williamd1k0/language-renpy
 
 Snippets são pedaços de código como no seguinte exemplo.
 
-![Snippets](http://i.imgur.com/XIlsFjr.gif)
+![Snippets](http://i.imgur.com/J6Y17rA.gif)
 
 O uso é feito com palavras-chave e em seguida um <kbd>Tab</kbd> para inserir o snippet.
 
