@@ -50,4 +50,4 @@ Por exemplo, há um snippet com links úteis, digite `dochelp` e pressione <kbd>
 Você pode conferir a lista dos snippets pelo Atom, estando na aba de um arquivo `.rpy` e pressionando <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>S</kbd> ou indo nas configurações do pacote (`Settings`>`Packages`>`language-renpy`>`Snippets`).
 
 Snippets serão adicionados de acordo com a necessidade, por isso sujestões são muito bem vindas.
-Utilize a [issue do repositório](https://github.com/williamd1k0/language-renpy/issues/6) para deixar seu snippet ou envie uma mensagem para o email `tumeowilliam@gmail.com`.
+Utilize a [issue do repositório](https://github.com/williamd1k0/language-renpy/issues/6) para deixar sua sujestão de snippet ou envie uma mensagem para o email `tumeowilliam@gmail.com`.
