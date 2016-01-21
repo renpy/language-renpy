@@ -19,6 +19,8 @@ pull request to add snippets, make grammar tweaks, etc.
 
 >Thanks to [Koroshiya](https://github.com/koroshiya) (Sublime-Renpy) and [PyTom](https://github.com/renpytom) (Ren'Py), of course!
 
+>[Known issues](https://github.com/williamd1k0/language-renpy/issues/8)
+
 ## Getting Started
 
 ### Installation
@@ -27,7 +29,7 @@ With [Atom](https://atom.io/) already installed, open the Settings tab: `File`>`
 
 Click in <kbd>+ Install</kbd> and search for `renpy` then click in <kbd>Install</kbd> button of the package `language-renpy`.
 
-It's also possible installing using the cmd command `apm` (atom package manager):
+It's also possible installing using the cli command `apm` (atom package manager):
 ```sh
 apm install language-renpy
 ```
