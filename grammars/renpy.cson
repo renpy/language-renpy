@@ -346,7 +346,7 @@
     ]
   }
   {
-    'begin': '^\\s*((jump)|(call)|(screen))\\s+(?=[a-zA-Z_][a-zA-Z_0-9]*\\s*)'
+    'begin': '^\\s*((jump)|(call)|(screen)|(label)|(menu))\\s+(?=[a-zA-Z_][a-zA-Z_0-9]*\\s*)'
     'beginCaptures':
       '1':
         'name': 'keyword.control.statement.python'
@@ -401,56 +401,6 @@
       '1':
         'name': 'keyword.control.statement.python'
     'end': '(\\=)|(\\s)|(\\s*$\\n?|#.*$\\n?)'
-    'endCaptures':
-      '1':
-        'name': 'punctuation.definition.inheritance.end.python'
-      '2':
-        'name': 'punctuation.section.class.begin.python'
-      '3':
-        'name': 'invalid.illegal.missing-section-begin.python'
-    'name': 'meta.class.python'
-    'patterns': [
-      {
-        'begin': '(?=[A-Za-z_][A-Za-z0-9_]*)'
-        'contentName': 'entity.name.type.class.python'
-        'end': '(?![A-Za-z0-9_])'
-        'patterns': [
-          {
-            'include': '#entity_name_class'
-          }
-        ]
-      }
-      {
-        'begin': '(\\()'
-        'beginCaptures':
-          '1':
-            'name': 'punctuation.definition.inheritance.begin.python'
-        'contentName': 'meta.class.inheritance.python'
-        'end': '(?=\\)|:|)'
-        'patterns': [
-          {
-            'begin': '(?<=\\(|,)\\s*'
-            'contentName': 'entity.other.inherited-class.python'
-            'end': '\\s*(?:(,)|(?=\\)))'
-            'endCaptures':
-              '1':
-                'name': 'punctuation.separator.inheritance.python'
-            'patterns': [
-              {
-                'include': '$self'
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-  {
-    'begin': '^\\s*((label)|(menu))\\s?*((?=[a-zA-Z_][a-zA-Z_0-9]*)\\s*)'
-    'beginCaptures':
-      '1':
-        'name': 'keyword.control.statement.python'
-    'end': '(\\:|\\()|(\\s*$\\n?|#.*$\\n?)'
     'endCaptures':
       '1':
         'name': 'punctuation.definition.inheritance.end.python'
