@@ -1,3 +1,6 @@
+## 1.5.4
+Fix text tags with attributes.
+
 ## 1.5.3
 Add basic documentation (EN and PT-BR).
 
