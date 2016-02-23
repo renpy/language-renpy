@@ -2,6 +2,7 @@
 'name': 'Ren\'Py'
 'fileTypes': [
   'rpy'
+  'rpym'
 ]
 'firstLineMatch': '^#!/.*\\brenpy\\b'
 'patterns': [
