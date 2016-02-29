@@ -1,3 +1,6 @@
+## 1.5.5
+Fix text tags with attributes (again).
+
 ## 1.5.4
 Fix text tags with attributes.
 
