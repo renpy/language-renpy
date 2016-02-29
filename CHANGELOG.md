@@ -1,4 +1,6 @@
 ## 1.5.5
+Add `.rpym` extension.
+
 Fix text tags with attributes (again).
 
 ## 1.5.4

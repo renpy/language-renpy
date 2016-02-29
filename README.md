@@ -11,9 +11,16 @@ Contributions are greatly appreciated. Please fork this repository and open a
 pull request to add snippets, make grammar tweaks, etc.
 
 * The highlight may vary depending on the syntax theme used.
-* Standard theme indicated: Atom Dark.
+* Default suggested syntax theme: [`Atom Dark`](https://atom.io/themes/atom-dark-syntax).
+* Alternative suggested syntax theme:
+ * [`Monokai`](https://atom.io/themes/monokai).
+ * [`octocat-syntax`](https://atom.io/themes/octocat-syntax)
 * To have better functionality is advisable to ~~install~~ (the following plugins are now included in the Atom >1.0) the plugins `autocomplete-plus` and `autocomplete-snippets`.
-* Other recommended plugin (just for styling): `file-icons`.
+* Other recommended plugin:
+ * [`file-icons`](https://atom.io/packages/file-icons)  - Just for file icons style
+ * [`pigments`](https://atom.io/packages/pigments) - Display colors in project (Hex, RGB etc)
+ * [`color-picker`](https://atom.io/packages/color-picker) - Color picker (Hex, RGB etc)
+ * [`minimap`](https://atom.io/packages/minimap) - Code minimap
 
 >Ren'Py is a Visual Novel development tool, available from [www.renpy.org](http://www.renpy.org/)
 
