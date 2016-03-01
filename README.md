@@ -7,6 +7,8 @@ Adds syntax highlighting and snippets to Ren'Py files in Atom.
 
 Originally converted from the [Python package for Atom](https://github.com/atom/language-python).
 
+Syntax highlighting test: [`GitHub Lightshow`](https://github-lightshow.herokuapp.com/?utf8=%E2%9C%93&scope=from-url&grammar_url=https%3A%2F%2Fgithub.com%2Fwilliamd1k0%2Flanguage-renpy%2Fblob%2Fmaster%2Fgrammars%2Frenpy.cson&grammar_text=&code_source=from-url&code_url=https%3A%2F%2Fgithub.com%2Fwilliamd1k0%2Flanguage-renpy%2Fblob%2Fmaster%2Fexample.rpy&code=)
+
 Contributions are greatly appreciated. Please fork this repository and open a
 pull request to add snippets, make grammar tweaks, etc.
 
@@ -21,6 +23,7 @@ pull request to add snippets, make grammar tweaks, etc.
  * [`pigments`](https://atom.io/packages/pigments) - Display colors in project (Hex, RGB etc)
  * [`color-picker`](https://atom.io/packages/color-picker) - Color picker (Hex, RGB etc)
  * [`minimap`](https://atom.io/packages/minimap) - Code minimap
+
 
 >Ren'Py is a Visual Novel development tool, available from [www.renpy.org](http://www.renpy.org/)
 
