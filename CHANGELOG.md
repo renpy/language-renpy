@@ -1,16 +1,19 @@
-## 1.5.5
-Add `.rpym` extension.
+## 1.5.6
+Fix `menu` without name;
 
-Fix text tags with attributes (again).
+## 1.5.5
+Add `.rpym` extension;
+
+Fix text tags with attributes (again);
 
 ## 1.5.4
-Fix text tags with attributes.
+Fix text tags with attributes;
 
 ## 1.5.3
-Add basic documentation (EN and PT-BR).
+Add basic documentation (EN and PT-BR);
 
 ## 1.5.2
-Fix Atom didn't recognize Renpy .rpy files at startup.
+Fix Atom didn't recognize Renpy .rpy files at startup;
 
 ## 1.5.1
 Fix bugs with <kbd>from</kbd> and <kbd>return</kbd> keywords;
