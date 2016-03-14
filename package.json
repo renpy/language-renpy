@@ -6,6 +6,15 @@
     "node": "*"
   },
   "description": "Ren'py language support in Atom",
+  "keywords": [
+    "language",
+    "grammar",
+    "snippets",
+    "renpy",
+    "visual-novel",
+    "game-dev",
+    "engine"
+  ],
   "homepage": "https://github.com/williamd1k0/language-renpy",
   "repository": {
     "type": "git",
