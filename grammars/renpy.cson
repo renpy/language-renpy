@@ -106,7 +106,7 @@
   {
     'comment': 'renpy screen statement keywords'
     'name': 'support.type.python'
-    'match': '\\b(kind|color|action|area|hovered|unhovered|python|clicked|modal|text_style|default|has|who|what|tag|value|theme)\\b'
+    'match': '\\b(kind|color|action|area|hovered|unhovered|clicked|modal|text_style|default|has|who|what|tag|value|theme)\\b'
   }
   {
     'comment': 'renpy transform keywords'
@@ -119,7 +119,7 @@
     'match': '\\b(Character|DynamicCharacter|music|sound|movie|pause|Transform|clear)\\b'
   }
 
-# Python statements Ren'Py Keywords. View(http://www.renpy.org/doc/html/python.html)
+  # Python statements Ren'Py Keywords. View(http://www.renpy.org/doc/html/python.html)
 
   {
     'comment': 'python one-line renpy keyword'
@@ -139,7 +139,7 @@
   {
     'comment': 'python statements renpy keywords'
     'name': 'support.type.python'
-    'match': '\\b(python|renpy|store|persistent|config)\\b'
+    'match': '\\b(renpy|store|persistent|config)\\b'
   }
   {
     'comment': 'python statements renpy keywords'
@@ -152,7 +152,7 @@
     'match': '\\b(init)\\b'
   }
 
-# Transitions Ren'Py Keywords. View(http://www.renpy.org/doc/html/transitions.html)
+  # Transitions Ren'Py Keywords. View(http://www.renpy.org/doc/html/transitions.html)
 
   {
     'comment': 'transition class renpy keywords'
@@ -165,7 +165,7 @@
     'match': '\\b(fade|dissolve|pixellate|move|moveinright|moveinleft|moveintop|moveinbottom|moveoutright|moveoutleft|moveouttop|moveoutbottom|ease|easeinright|easeinleft|easeintop|easeinbottom|easeoutright|easeoutleft|easeouttop|easeoutbottom|zoomin|zoomout|zoominout|vpunch|hpunch|blinds|squares|wipeleft|wiperight|wipeup|wipedown|slideleft|slideright|slideup|slidedown|slideawayleft|slideawayright|slideawayup|slideawaydown|irisin|irisout)\\b'
   }
 
-# Transform Properties Ren'Py Keywords. View(http://www.renpy.org/doc/html/atl.html#transform-properties)
+  # Transform Properties Ren'Py Keywords. View(http://www.renpy.org/doc/html/atl.html#transform-properties)
 
   {
     'comment': 'transform properties renpy keywords'
@@ -173,7 +173,7 @@
     'match': '\\b(linear|top_margin|ymargin|xsize|ysize|yminimum|xminimum|ymaximum|xmaximum|transpose|insensitive|selected_idle|selected_hover|ground|idle|hover|focus_mask|hover_sound|activate_sound|style|spacing|text_align|size_group|layout|style_group|background|ypadding|xpadding|idle_color|hover_color|selected_idle_color|selected_hover_color|insensitive_color|xfill|xmargin|pos|xpos|ypos|anchor|xanchor|yanchor|align|xalign|yalign|xoffset|yoffset|xcenter|ycenter|rotate|rotate_pad|transform_anchor|zoom|xzoom|yzoom|nearest|alpha|additive|around|alignaround|angle|radius|crop|crop_relative|corner1|corner2|size|subpixel|delay|events)\\b'
   }
 
-#  Movie Ren'Py Keywords. View(http://www.renpy.org/doc/html/movie.html)
+  #  Movie Ren'Py Keywords. View(http://www.renpy.org/doc/html/movie.html)
 
   {
     'comment': 'Movie renpy keywords'
@@ -181,7 +181,7 @@
     'match': '\\b(Movie|movie_cutscene)\\b'
   }
 
-#  Audio/Movie functions Ren'Py Keywords. View(http://www.renpy.org/doc/html/audio.html)
+  #  Audio/Movie functions Ren'Py Keywords. View(http://www.renpy.org/doc/html/audio.html)
 
   {
     'comment': 'Audio/Movie statements renpy keywords'
@@ -194,13 +194,8 @@
     'match': '\\b(seen_audio|get_playing|is_playing|register_channel|set_pan|set_queue_empty_callback|set_volume|loop|noloop)\\b'
   }
 
-# Image displaying functions Ren'Py Keywords. View(http://www.renpy.org/doc/html/displaying_images.html)
+  # Image displaying functions Ren'Py Keywords. View(http://www.renpy.org/doc/html/displaying_images.html)
 
-# {
-#    'comment': 'image statements renpy keywords'
-#    'name': 'keyword.control.statement.python'
-#    'match': '\\b(hide|show)\\b'
-#  }
   {
     'comment': 'show statements renpy keywords'
     'name': 'support.type.python'
@@ -212,7 +207,7 @@
     'match': '\\b(copy_images|get_image_bounds|get_placement|image_exists|seen_image|showing|start_predict|stop_predict)\\b'
   }
 
-#  Action Ren'Py Keywords. View(http://www.renpy.org/doc/html/screen_actions.html)
+  #  Action Ren'Py Keywords. View(http://www.renpy.org/doc/html/screen_actions.html)
 
   {
     'comment': 'action renpy keywords'
@@ -245,7 +240,7 @@
     'match': '\\b(Preference|Function|Help|HideInterface|If|InvertSelected|MouseMove|Notify|OpenURL|RollForward|Rollback|ScreenShot|SelectedIf|Skip|With)\\b'
   }
 
-#  End of Action Ren'Py Keywords.
+  #  End of Action Ren'Py Keywords.
 
   {
     'comment': 'keyword operators that evaluate to True or False'
@@ -901,9 +896,6 @@
   'builtin_types':
     'match': '(?x)\\b(\n\t\t\t\tbasestring|bool|buffer|bytearray|bytes|complex|dict|float|frozenset|int|\n\t\t\t\tlist|long|memoryview|object|range|set|slice|str|tuple|unicode|xrange\n\t\t\t)\\b'
     'name': 'support.type.python'
-#  'constant_placeholder':
-#    'match': '(?i:(%(\\([a-z_]+\\))?#?0?\\-?[ ]?\\+?([0-9]*|\\*)(\\.([0-9]*|\\*))?([hL][a-z]|[a-z%]))|(\\{([!\\[\\].:\\w ]+)?\\}))'
-#    'name': 'constant.other.placeholder.python'
   'constant_placeholder':
     'match': '(?i:(%(\\([a-z_]+\\))?#?0?\\-?[ ]?\\+?([0-9]*|\\*)(\\.([0-9]*|\\*))?([hL][a-z]|[a-z%]))|(\\{([#=\\-\\+!\\[\\].:\\w ]+)?\\})|(\\{\\/([!\\[\\].:\\w ]+)?\\})|(\\[([!\\[\\].:\\w ]+)?\\]))'
     'name': 'constant.other.placeholder.python'

@@ -2,6 +2,7 @@
 * Update MIT License;
 * Add package keywords;
 * Add basic spec;
+* Remove duplicates;
 
 ## 1.5.6
 * Fix `menu` without name;
