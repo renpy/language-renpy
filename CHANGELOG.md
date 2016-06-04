@@ -1,3 +1,7 @@
+## 1.5.8
+* Add **Translations** syntax highlighting;
+* Remove term `python` from init snippet info;
+
 ## 1.5.7
 * Update MIT License;
 * Add package keywords;

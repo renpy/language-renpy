@@ -241,6 +241,29 @@
   }
 
   #  End of Action Ren'Py Keywords.
+  #  Ren'Py translation statements'
+  
+  {
+    'comment': 'Translation key "new"'
+    'name': 'entity.name.function.translation.renpy'
+    'match': '(?:\\s+)\\b(new)\\b'
+  }
+  {
+    'comment': 'Translation key "old"'
+    'name': 'keyword.operator.logical.translation.renpy'
+    'match': '(?:\\s+)\\b(old)\\b'
+  }
+  {
+    'captures':
+      '1':
+        'name': 'keyword.operator.logical.translation.renpy'
+      '2':
+        'name': 'entity.name.function.translation.renpy'
+      '3':
+        'name': 'support.type.translation.renpy'
+    'comment': 'python statements renpy keywords'
+    'match': '^\\b(translate)\\b\\s\\b([a-zA-z0-9_]+)\\b\\s\\b(strings)\\b'
+  }
 
   {
     'comment': 'keyword operators that evaluate to True or False'
