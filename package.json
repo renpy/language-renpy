@@ -1,6 +1,6 @@
 {
   "name": "language-renpy",
-  "version": "1.5.7",
+  "version": "1.5.8",
   "engines": {
     "atom": "*",
     "node": "*"
