@@ -33,7 +33,7 @@
   'Init Block':
     prefix: 'init'
     body: 'init ${1:#priority number}:\n\t${2:}'
-    description: 'Run python code at initialization time \n- Click in "More..." for doc info.'
+    description: 'Run code at initialization time \n- Click in "More..." for doc info.'
     descriptionMoreURL: 'https://www.renpy.org/doc/html/python.html#init-python-statement'
   'Init with Python Block':
     prefix: 'inipy'
