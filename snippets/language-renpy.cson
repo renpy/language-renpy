@@ -3,6 +3,7 @@
   'Label':
     'prefix': 'label'
     'body': 'label ${1:labelName}:\n\t${2:}'
+    'description': 'Create a new label \n- Use the snippet `dochelp` or `helplabel` to see doc info.'
   'Pause':
     'prefix': 'pause'
     'body': 'with Pause($1)\n$2'
@@ -47,10 +48,10 @@
   '[$] Renpy Pause':
     'prefix': 'rpause'
     'body': '$ renpy.pause($1)\n$2'
-  '[$] Movie Cutscene (All Plataforms)':
+  '[$] Movie Cutscene (All Platforms)':
     'prefix': 'cutscene'
     'body': '$ renpy.movie_cutscene(\'${1:fileName.extension}\')'
-  '[$] Save Persistent (All Plataforms)':
+  '[$] Save Persistent (All Platforms)':
     'prefix': 'persist'
     'body': '$ persistent.${1:valueName} = ${2:#variable}'
   '[$] Save MultiPersistent (Only PC)':

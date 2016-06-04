@@ -3,6 +3,8 @@
 * Add package keywords;
 * Add basic spec;
 * Remove duplicates;
+* Fix typos;
+* Add basic snippets info;
 
 ## 1.5.6
 * Fix `menu` without name;
