@@ -5,6 +5,7 @@
 * Remove duplicates;
 * Fix typos;
 * Add basic snippets info;
+* Change names to PEP 8 underscore style;
 
 ## 1.5.6
 * Fix `menu` without name;
