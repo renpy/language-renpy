@@ -1,6 +1,5 @@
 ## 1.5.9
 * Total code clear;
-* Remove unnecessary quotes in grammars;
 * Optimize transitions and music/audio functions;
 * Minor fixes;
 
