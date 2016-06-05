@@ -1,3 +1,9 @@
+## 1.5.9
+* Total code clear;
+* Remove unnecessary quotes in grammars;
+* Optimize transitions and music/audio functions;
+* Minor fixes;
+
 ## 1.5.8
 * Add **Translations** syntax highlighting;
 * Remove term `python` from init snippet info;
