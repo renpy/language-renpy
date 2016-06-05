@@ -1131,7 +1131,7 @@
    'name': 'support.variable.magic.python'
   'regular_expressions':
    'comment': 'Changed disabled to 1 to turn off syntax highlighting in “r” strings.'
-    'disabled': 0
+   'disabled': 0
    'patterns': [
       {
        'include': 'source.regexp.python'
