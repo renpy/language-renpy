@@ -1,5 +1,6 @@
 ## 1.6.0
 * Add snippets categories (left labels);
+* Update dochelp snippet;
 
 ## 1.5.9
 * Total code clear;

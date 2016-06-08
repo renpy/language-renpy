@@ -310,7 +310,17 @@
 # Ren'Py Docs
   'Ren\'Py Docs':
     prefix: 'dochelp'
-    body: '## Visit the site for documentation or help of Ren\'Py engine. ##\n## Documentation:\n\t"${1:http://www.renpy.org/doc/html/}"\n## Wiki-Old Documentation:\n\t"${2:http://www.renpy.org/wiki/renpy/Wiki_Home_Page}"\n## Forum:\n\t"${3:http://lemmasoft.renai.us/forums/viewforum.php?f=42}"\n## Package Documentation:\n\t"${4:https://github.com/williamd1k0/language-renpy#getting-started}"\n\n## Warning: All snippets that start with [Py] are for Python commands and [$] are for One Line Python.'
+    body: """
+        ## Visit the site for documentation or help of Ren\'Py engine. ##
+        ## Documentation:
+        \t"${1:http://www.renpy.org/doc/html/}"
+        ## Wiki-Old Documentation:
+        \t"${2:http://www.renpy.org/wiki/renpy/Wiki_Home_Page}"
+        ## Forum:
+        \t"${3:http://lemmasoft.renai.us/forums/viewforum.php?f=42}"
+        ## Package Documentation:
+        \t"${4:https://github.com/williamd1k0/language-renpy#getting-started}"
+        """
     leftLabelHTML: """
         <span title="Help"
             style="color:#000;background-color:#9d9da6;padding:2px 5px;border-radius:100%;font-weight:bold;">
