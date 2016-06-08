@@ -1,4 +1,6 @@
 # Ren'Py language support in Atom
+
+<a href='https://pledgie.com/campaigns/31864'><img alt='Click here to lend your support to: Ren&#x27;Py Package for Atom and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/31864.png?skin_name=chrome' border='0' ></a>
 [![Build Status](https://travis-ci.org/williamd1k0/language-renpy.svg)](https://travis-ci.org/williamd1k0/language-renpy)
 [![Join the chat at https://gitter.im/williamd1k0/language-renpy](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/williamd1k0/language-renpy?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [Português](https://github.com/williamd1k0/language-renpy/blob/master/README_PT-BR.md)
