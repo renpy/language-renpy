@@ -50,10 +50,6 @@ apm install language-renpy
 
 Open a `.rpy` file or create a new one and test the syntax highlighting of the Ren'Py. Also use the [example file](https://github.com/williamd1k0/language-renpy/blob/master/example.rpy) available on the package repository.
 
-Snippets:
-
-Snippets are pieces of code like in the following example.
-
 ## Snippets:
 
 Snippets are pieces of code like in the following example.
