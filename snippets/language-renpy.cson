@@ -556,6 +556,75 @@
             Py
         </span>
         """
+# Text Tags [without auto-complete suggestion]
+  'Anchor Tag':
+    prefix: 'a'
+    body: '{a=${1:url}}$2{/a}'
+  'Alpha Tag':
+    prefix: 'al'
+    body: '{alpha=${1:alpha value}}$2{/alpha}'
+  'Bold Tag':
+    prefix: 'b'
+    body: '{b}$1{/b}'
+  'Color Tag':
+    prefix: 'c'
+    body: '{color=${1:color code}}$2{/color}'
+  'Characters per second Tag':
+    prefix: 'cp'
+    body: '{cps=${1:characters per second}}$2{/cps}'
+  'Font Tag':
+    prefix: 'f'
+    body: '{font=${1:font file}}$2{/font}'
+  'Italics Tag':
+    prefix: 'i'
+    body: '{i}$1{/i}'
+  'Kerning Tag':
+    prefix: 'k'
+    body: '{k=${1:adjust value}}$2{/k}'
+  'Image Tag':
+    prefix: 'im'
+    body: '{image=${1:image file}}'
+  'Strikethrough Tag':
+    prefix: 's'
+    body: '{s}$1{/s}'
+  'Ruby Text Top Tag':
+    prefix: 'rt'
+    body: '{rt}$1{/rt}'
+  'Ruby Text Bottom Tag':
+    prefix: 'rb'
+    body: '{rb}$1{/rb}'
+  'Size Tag':
+    prefix: 'si'
+    body: '{size=${1:size value}}$2{/size}'
+  'Space Tag':
+    prefix: 'sp'
+    body: '{space=${1:space size}}'
+  'Underline Tag':
+    prefix: 'u'
+    body: '{u}$1{/u}'
+  'Vertical space Tag':
+    prefix: 'v'
+    body: '{vspace=${1:space size}}'
+  'Fast Tag':
+    prefix: 'fa'
+    body: '{fast}'
+  'No-wait Tag':
+    prefix: 'n'
+    body: '{nw}'
+  'Paragraph Tag':
+    prefix: 'p'
+    body: '{p}'
+  'Wait Paragraph Tag':
+    prefix: 'pp'
+    body: '{p=${1:wait time}}'
+  'Wait Tag':
+    prefix: 'w'
+    body: '{w}'
+  'Wait time Tag':
+    prefix: 'ww'
+    body: '{w=${1:wait time}}'
+
+
 '.source.renpy:not(.string)':
   'self':
     prefix: '.'
