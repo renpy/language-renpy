@@ -1,6 +1,8 @@
 ## 1.6.0
 * Add snippets categories (left labels);
 * Update dochelp snippet;
+* Fix Text Tags with links using slash or backslash;
+* Fix GitHub Text Tags regression;
 
 ## 1.5.9
 * Total code clear;
