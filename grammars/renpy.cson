@@ -111,7 +111,7 @@
   {
    'comment': 'renpy transform keywords'
    'name': 'support.type.transform.renpy'
-   'match': '\\b(repeat|transform|fadein|fadeout|position|Position|easein|easeout|time|ui)\\b'
+   'match': '\\b(repeat|fadein|fadeout|position|Position|easein|easeout|time|ui)\\b'
   }
   {
    'comment': 'other renpy keywords'
@@ -134,7 +134,7 @@
   {
    'comment': 'python statements renpy keywords'
    'name': 'support.type.objects.renpy'
-   'match': '\\b(renpy|store|persistent|config)\\b'
+   'match': '\\b(renpy|store|persistent|config|build)\\b'
   }
   {
    'comment': 'python statements renpy keywords'
@@ -168,7 +168,7 @@
 
   {
    'comment': 'transform properties renpy keywords'
-   'name': 'variable.parameter.function.python'
+   'name': 'support.type.transform.renpy'
    'match': '\\b(linear|top_margin|ymargin|xsize|ysize|yminimum|xminimum|ymaximum|xmaximum|transpose|insensitive|selected_idle|selected_hover|ground|idle|hover|focus_mask|hover_sound|activate_sound|style|spacing|text_align|size_group|layout|style_group|background|ypadding|xpadding|idle_color|hover_color|selected_idle_color|selected_hover_color|insensitive_color|xfill|xmargin|pos|xpos|ypos|anchor|xanchor|yanchor|align|xalign|yalign|xoffset|yoffset|xcenter|ycenter|rotate|rotate_pad|transform_anchor|zoom|xzoom|yzoom|nearest|alpha|additive|around|alignaround|angle|radius|crop|crop_relative|corner1|corner2|size|subpixel|delay|events)\\b'
   }
 
@@ -176,7 +176,7 @@
 
   {
    'comment': 'Movie renpy keywords'
-   'name': 'support.type.python'
+   'name': 'support.type.movie.renpy'
    'match': '\\b(Movie|movie_cutscene)\\b'
   }
 
@@ -377,7 +377,7 @@
     ]
   }
   {
-   'begin': '^\\s*((jump)|(call)|(screen)|(label)|(menu))\\s+(?=[a-zA-Z_][a-zA-Z_0-9]*\\s*)'
+   'begin': '^\\s*((jump)|(call)|(screen)|(label)|(menu)|(transform))\\s+(?=[a-zA-Z_][a-zA-Z_0-9]*\\s*)'
    'beginCaptures':
       '1':
        'name': 'keyword.control.statement.renpy'

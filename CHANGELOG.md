@@ -4,6 +4,8 @@
 * Fix Text Tags with links using slash or backslash;
 * Fix GitHub Text Tags regression;
 * Add snippets for Text Tags;
+* Change style/transform syntax name;
+* Other keywords added;
 
 ## 1.5.9
 * Total code clear;
