@@ -381,7 +381,7 @@
    'beginCaptures':
       '1':
        'name': 'keyword.control.statement.renpy'
-   'end': '(\\n|\\()|#'
+   'end': '(\\n|\\()|\\:'
    'endCaptures':
       '1':
        'name': 'punctuation.definition.inheritance.end.python'
