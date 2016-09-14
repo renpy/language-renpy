@@ -6,6 +6,7 @@
 * Add snippets for Text Tags;
 * Change style/transform syntax name;
 * Fix comments in label and screen statements;
+* Fix Text Tags with links using search;
 * Other keywords added;
 
 ## 1.5.9
