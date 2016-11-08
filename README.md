@@ -5,7 +5,12 @@
 [![Join the chat at https://gitter.im/williamd1k0/language-renpy](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/williamd1k0/language-renpy?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [Português](https://github.com/williamd1k0/language-renpy/blob/master/README_PT-BR.md)
 
+***
 Adds syntax highlighting and snippets to Ren'Py files in Atom.
+
+It also adds syntax highlighting to GitHub files, markdown code blocks and GitHub Gist ([more info here](https://gist.github.com/williamd1k0/3b231c42e4a3efdd9759)).
+
+![renpy-banner](https://t.gyazo.com/teams/thetimetunnel/952724864733e37ac528f4c9f3a07cf2.png)
 
 Originally converted from the [Python package for Atom](https://github.com/atom/language-python).
 
