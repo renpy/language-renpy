@@ -106,7 +106,7 @@
   {
    'comment': 'renpy screen statement keywords'
    'name': 'support.type.screen.renpy'
-   'match': '\\b(kind|color|action|area|hovered|unhovered|clicked|modal|text_style|default|has|who|what|tag|value|theme)\\b'
+   'match': '\\b(kind|color|action|area|hovered|unhovered|clicked|modal|text_style|has|who|what|tag|value|theme)\\b'
   }
   {
    'comment': 'renpy transform keywords'
@@ -427,7 +427,7 @@
     ]
   }
   {
-   'begin': '((define)|(image)|(scene)|(show)|(hide))\\s+((\\s)|(?=[a-zA-Z_][a-zA-Z_0-9]*\\s*))'
+   'begin': '((default)|(define)|(image)|(scene)|(show)|(hide))\\s+((\\s)|(?=[a-zA-Z_][a-zA-Z_0-9]*\\s*))'
    'beginCaptures':
       '1':
        'name': 'keyword.control.statement.renpy'

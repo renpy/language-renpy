@@ -1,3 +1,6 @@
+## 1.6.1
+* Fix `default` keyword highlight;
+
 ## 1.6.0
 * Add snippets categories (left labels);
 * Update dochelp snippet;
