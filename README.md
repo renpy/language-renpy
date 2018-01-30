@@ -1,11 +1,7 @@
 # Ren'Py language support in Atom
 
-<a href='https://pledgie.com/campaigns/31864'><img alt='Click here to lend your support to: Ren&#x27;Py Package for Atom and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/31864.png?skin_name=chrome' border='0' ></a>
 [![Build Status](https://travis-ci.org/williamd1k0/language-renpy.svg)](https://travis-ci.org/williamd1k0/language-renpy)
-[![Join the chat at https://gitter.im/williamd1k0/language-renpy](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/williamd1k0/language-renpy?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[Português](https://github.com/williamd1k0/language-renpy/blob/master/README_PT-BR.md)
 
-***
 Adds syntax highlighting and snippets to Ren'Py files in Atom.
 
 It also adds syntax highlighting to GitHub files, markdown code blocks and GitHub Gist ([more info here](https://gist.github.com/williamd1k0/3b231c42e4a3efdd9759)).
@@ -24,7 +20,8 @@ pull request to add snippets, make grammar tweaks, etc.
 * Alternative suggested syntax theme:
  * [`Monokai`](https://atom.io/themes/monokai).
  * [`octocat-syntax`](https://atom.io/themes/octocat-syntax)
-* To have better functionality is advisable to ~~install~~ (the following plugins are now included in the Atom >1.0) the plugins `autocomplete-plus` and `autocomplete-snippets`.
+
+
 * Other recommended plugin:
  * [`file-icons`](https://atom.io/packages/file-icons)  - Just for file icons style
  * [`pigments`](https://atom.io/packages/pigments) - Display colors in project (Hex, RGB etc)
@@ -35,8 +32,6 @@ pull request to add snippets, make grammar tweaks, etc.
 >Ren'Py is a Visual Novel development tool, available from [www.renpy.org](http://www.renpy.org/)
 
 >Thanks to [Koroshiya](https://github.com/koroshiya) (Sublime-Renpy) and [PyTom](https://github.com/renpytom) (Ren'Py), of course!
-
->[Known issues](https://github.com/williamd1k0/language-renpy/issues/8)
 
 ## Getting Started
 
@@ -53,7 +48,7 @@ apm install language-renpy
 
 ### Usage
 
-Open a `.rpy` file or create a new one and test the syntax highlighting of the Ren'Py. Also use the [example file](https://github.com/williamd1k0/language-renpy/blob/master/example.rpy) available on the package repository.
+Open a `.rpy` file or create a new one and test the syntax highlighting of the Ren'Py. You can also use the [example file](blob/master/example.rpy) available on the package repository.
 
 ## Snippets:
 
@@ -65,6 +60,6 @@ The usage is done with keywords followed by a <kbd>Tab</kbd> to insert the snipp
 
 For example, there's a snippet with useful links, type `dochelp` and press <kbd>Tab</kbd> or <kbd>Enter</kbd>.
 
-You can check the snippets list with Atom, being at the tab of a `.rpy` file and pressing <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>S</kbd> or going to the package settings (`Settings`>`Packages`>`language-renpy`>`Snippets`).
+You can check the snippets list while editing a `.rpy` file, just open the Command Palette (<kbd>Ctrl/Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>) and search for **Snippets: Available** or go to the package settings (`Settings`>`Packages`>`language-renpy`>`Snippets`).
 
-Snippets are added by need, so suggestions are welcomed. Use the [repository issue](https://github.com/williamd1k0/language-renpy/issues/6) to leave your suggestion or send a message to `tumeowilliam@gmail.com`.
+Snippets are added by need, so suggestions are welcome.
