@@ -319,7 +319,7 @@
         ## Forum:
         \t"${3:http://lemmasoft.renai.us/forums/viewforum.php?f=42}"
         ## Package Documentation:
-        \t"${4:https://github.com/williamd1k0/language-renpy#getting-started}"
+        \t"${4:https://github.com/renpy/language-renpy#getting-started}"
         """
     leftLabelHTML: """
         <span title="Help"
