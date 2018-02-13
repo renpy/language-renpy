@@ -1,6 +1,6 @@
 # Ren'Py language support in Atom
 
-[![Build Status](https://travis-ci.org/williamd1k0/language-renpy.svg)](https://travis-ci.org/williamd1k0/language-renpy)
+[![Build Status](https://travis-ci.org/renpy/language-renpy.svg)](https://travis-ci.org/renpy/language-renpy)
 
 Adds syntax highlighting and snippets to Ren'Py files in Atom.
 
@@ -10,7 +10,7 @@ It also adds syntax highlighting to GitHub files, markdown code blocks and GitHu
 
 Originally converted from the [Python package for Atom](https://github.com/atom/language-python).
 
-Syntax highlighting test: [`GitHub Lightshow`](https://github-lightshow.herokuapp.com/?utf8=%E2%9C%93&scope=from-url&grammar_url=https%3A%2F%2Fgithub.com%2Fwilliamd1k0%2Flanguage-renpy%2Fblob%2Fmaster%2Fgrammars%2Frenpy.cson&grammar_text=&code_source=from-url&code_url=https%3A%2F%2Fgithub.com%2Fwilliamd1k0%2Flanguage-renpy%2Fblob%2Fmaster%2Fexample.rpy&code=)
+Syntax highlighting test: [`GitHub Lightshow`](https://github-lightshow.herokuapp.com/?utf8=%E2%9C%93&scope=from-url&grammar_format=cson&grammar_url=https%3A%2F%2Fgithub.com%2Frenpy%2Flanguage-renpy%2Fblob%2Fmaster%2Fgrammars%2Frenpy.cson&grammar_text=&code_source=from-url&code_url=https%3A%2F%2Fgithub.com%2Frenpy%2Flanguage-renpy%2Fblob%2Fmaster%2Fexample.rpy)
 
 Contributions are greatly appreciated. Please fork this repository and open a
 pull request to add snippets, make grammar tweaks, etc.
@@ -22,7 +22,7 @@ pull request to add snippets, make grammar tweaks, etc.
  * [`octocat-syntax`](https://atom.io/themes/octocat-syntax)
 
 
-* Other recommended plugin:
+* Other recommended packages:
  * [`file-icons`](https://atom.io/packages/file-icons)  - Just for file icons style
  * [`pigments`](https://atom.io/packages/pigments) - Display colors in project (Hex, RGB etc)
  * [`color-picker`](https://atom.io/packages/color-picker) - Color picker (Hex, RGB etc)
@@ -48,7 +48,7 @@ apm install language-renpy
 
 ### Usage
 
-Open a `.rpy` file or create a new one and test the syntax highlighting of the Ren'Py. You can also use the [example file](blob/master/example.rpy) available on the package repository.
+Open a `.rpy` file or create a new one and test the syntax highlighting of the Ren'Py. You can also use the [example file](example.rpy) available on the package repository.
 
 ## Snippets:
 
