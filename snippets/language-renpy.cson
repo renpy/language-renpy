@@ -276,69 +276,91 @@
   'Anchor Tag':
     prefix: 'a'
     body: '{a=${1:url}}$2{/a}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
   'Alpha Tag':
     prefix: 'al'
     body: '{alpha=${1:alpha value}}$2{/alpha}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
   'Bold Tag':
     prefix: 'b'
     body: '{b}$1{/b}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
   'Color Tag':
     prefix: 'c'
     body: '{color=${1:color code}}$2{/color}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
   'Characters per second Tag':
     prefix: 'cp'
     body: '{cps=${1:characters per second}}$2{/cps}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
   'Font Tag':
     prefix: 'f'
     body: '{font=${1:font file}}$2{/font}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
   'Italics Tag':
     prefix: 'i'
     body: '{i}$1{/i}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
   'Kerning Tag':
     prefix: 'k'
     body: '{k=${1:adjust value}}$2{/k}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
   'Image Tag':
     prefix: 'im'
     body: '{image=${1:image file}}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
   'Strikethrough Tag':
     prefix: 's'
     body: '{s}$1{/s}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
   'Ruby Text Top Tag':
     prefix: 'rt'
     body: '{rt}$1{/rt}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
   'Ruby Text Bottom Tag':
     prefix: 'rb'
     body: '{rb}$1{/rb}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
   'Size Tag':
     prefix: 'si'
     body: '{size=${1:size value}}$2{/size}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
   'Space Tag':
     prefix: 'sp'
     body: '{space=${1:space size}}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
   'Underline Tag':
     prefix: 'u'
     body: '{u}$1{/u}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
   'Vertical space Tag':
     prefix: 'v'
     body: '{vspace=${1:space size}}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
   'Fast Tag':
     prefix: 'fa'
     body: '{fast}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
   'No-wait Tag':
     prefix: 'n'
     body: '{nw}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
   'Paragraph Tag':
     prefix: 'p'
     body: '{p}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
   'Wait Paragraph Tag':
     prefix: 'pp'
     body: '{p=${1:wait time}}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
   'Wait Tag':
     prefix: 'w'
     body: '{w}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
   'Wait time Tag':
     prefix: 'ww'
     body: '{w=${1:wait time}}'
+    leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
 
 
 '.source.renpy:not(.string)':
