@@ -110,40 +110,15 @@
    'name': 'invalid.deprecated.operator.python'
   }
   {
-   'match' : '\\b(\\$|add|and|animation|as|assert|at|auto|bar|behind|block|break|button|call|choice|circles|class|clear|clockwise|contains|continue|counterclockwise|def|default|define|del|drag|draggroup|elif|else|event|except|exec|expression|finally|fixed|for|frame|from|function|global|grid|hbox|hide|hotbar|hotspot|if|image|imagebutton|imagemap|import|in|init|input|is|jump|key|knot|label|lambda|menu|mousearea|music|nointeract|not|null|nvl|offset|on|onlayer|or|parallel|pass|pause|play|print|python|queue|raise|repeat|return|scene|screen|show|showif|side|sound|stop|strings|style|sustain|take|testcase|text|textbutton|time|timer|transclude|transform|translate|try|use|vbar|vbox|viewport|voice|vpgrid|while|window|with|yield|zorder)\\b'
+   'match' : '\\b(<<< keyword_regex >>>)\\b'
    'name' : 'keyword.renpy.python'
   }
-
+<<% for i in property_regexes %>>
   {
-   'match' : '\\b((?:action|activate_sound|adjustment|allow|alpha|alternate|alternate_keysym|arguments|arrowkeys|at|auto|cache|caption|changed|child_size|clicked|cols|default|drag_handle|drag_joined|drag_name|drag_offscreen|drag_raise|draggable|dragged|droppable|dropped|edgescroll|exclude|focus|focus_mask|ground|height|hover|hovered|id|idle|image_style|insensitive|keysym|layer|length|modal|mouse_drop|mousewheel|pagekeys|pixel_width|predict|prefix|properties|range|repeat|rows|scope|scrollbars|selected|selected_hover|selected_idle|selected_insensitive|sensitive|slow|slow_done|spacing|style|style_group|style_prefix|style_suffix|substitute|suffix|text_style|transpose|unhovered|value|variant|width|xadjustment|xinitial|yadjustment|yinitial|zorder))\\b'
+   'match' : '\\b(<<< i >>>)\\b'
    'name' : 'support.type.other.renpy.python'
   }
-
-  {
-   'match' : '\\b((?:|activate_|hover_|idle_|insensitive_|selected_|selected_activate_|selected_hover_|selected_idle_|selected_insensitive_)(?:additive|adjust_spacing|align|alignaround|alpha|alt|anchor|angle|antialias|area|around|background|bar_invert|bar_resizing|bar_vertical|base_bar|black_color|bold|bottom_bar|bottom_gutter|bottom_margin|bottom_padding|box_layout|box_reverse|box_wrap|child|clipping|color|corner1|corner2|crop|crop_relative|debug|delay|drop_shadow|drop_shadow_color|events|first_indent|first_spacing|fit_first|focus_mask|font|foreground|hinting|hyperlink_functions|italic|justify|kerning|key_events|keyboard_focus|language|layout|left_bar|left_gutter|left_margin|left_padding|line_leading|line_spacing|margin|maximum|maxsize|min_width|minimum|minwidth|mouse|nearest|newline_indent|offset|order_reverse|outlines|padding|pos|radius|rest_indent|right_bar|right_gutter|right_margin|right_padding|rotate|rotate_pad|ruby_style|size|size_group|slow_abortable|slow_cps|slow_cps_multiplier|sound|spacing|strikethrough|subpixel|text_align|text_y_fudge|thumb|thumb_offset|thumb_shadow|tooltip|top_bar|top_gutter|top_margin|top_padding|transform_anchor|underline|unscrollable|vertical|xalign|xanchor|xanchoraround|xaround|xcenter|xfill|xfit|xmargin|xmaximum|xminimum|xoffset|xpadding|xpan|xpos|xsize|xspacing|xtile|xysize|xzoom|yalign|yanchor|yanchoraround|yaround|ycenter|yfill|yfit|ymargin|ymaximum|yminimum|yoffset|ypadding|ypan|ypos|ysize|yspacing|ytile|yzoom|zoom))\\b'
-   'name' : 'support.type.other.renpy.python'
-  }
-
-  {
-   'match' : '\\b((?:vscrollbar_|scrollbar_)(?:|activate_|hover_|idle_|insensitive_|selected_|selected_activate_|selected_hover_|selected_idle_|selected_insensitive_)(?:align|alt|anchor|area|bar_invert|bar_resizing|bar_vertical|base_bar|bottom_bar|bottom_gutter|clipping|debug|keyboard_focus|left_bar|left_gutter|maximum|mouse|offset|pos|right_bar|right_gutter|thumb|thumb_offset|thumb_shadow|tooltip|top_bar|top_gutter|unscrollable|xalign|xanchor|xcenter|xfill|xmaximum|xoffset|xpos|xsize|xysize|yalign|yanchor|ycenter|yfill|ymaximum|yoffset|ypos|ysize))\\b'
-   'name' : 'support.type.other.renpy.python'
-  }
-
-  {
-   'match' : '\\b(side_(?:|activate_|hover_|idle_|insensitive_|selected_|selected_activate_|selected_hover_|selected_idle_|selected_insensitive_)(?:align|alt|anchor|area|clipping|debug|maximum|offset|pos|spacing|tooltip|xalign|xanchor|xcenter|xfill|xmaximum|xoffset|xpos|xsize|xysize|yalign|yanchor|ycenter|yfill|ymaximum|yoffset|ypos|ysize))\\b'
-   'name' : 'support.type.other.renpy.python'
-  }
-
-  {
-   'match' : '\\b(text_(?:|activate_|hover_|idle_|insensitive_|selected_|selected_activate_|selected_hover_|selected_idle_|selected_insensitive_)(?:adjust_spacing|align|alt|anchor|antialias|area|black_color|bold|clipping|color|debug|drop_shadow|drop_shadow_color|first_indent|font|hinting|hyperlink_functions|italic|justify|kerning|language|layout|line_leading|line_spacing|maximum|min_width|minimum|minwidth|newline_indent|offset|outlines|pos|rest_indent|ruby_style|size|slow_abortable|slow_cps|slow_cps_multiplier|strikethrough|text_align|text_y_fudge|tooltip|underline|vertical|xalign|xanchor|xcenter|xfill|xmaximum|xminimum|xoffset|xpos|xsize|xysize|yalign|yanchor|ycenter|yfill|ymaximum|yminimum|yoffset|ypos|ysize))\\b'
-   'name' : 'support.type.other.renpy.python'
-  }
-
-  {
-   'match' : '\\b(viewport_(?:|activate_|hover_|idle_|insensitive_|selected_|selected_activate_|selected_hover_|selected_idle_|selected_insensitive_)(?:align|alt|anchor|area|clipping|debug|maximum|offset|pos|tooltip|xalign|xanchor|xcenter|xfill|xmaximum|xoffset|xpos|xsize|xysize|yalign|yanchor|ycenter|yfill|ymaximum|yoffset|ypos|ysize))\\b'
-   'name' : 'support.type.other.renpy.python'
-  }
-
+<<% endfor %>>
   {
    'match': '<\\=|>\\=|\\=\\=|<|>|\\!\\='
    'name': 'keyword.operator.comparison.python'
