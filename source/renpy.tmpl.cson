@@ -110,16 +110,6 @@
    'name': 'invalid.deprecated.operator.python'
   }
   {
-   'match' : '\\b(<<< keyword_regex >>>)\\b'
-   'name' : 'keyword.renpy.python'
-  }
-<<% for i in property_regexes %>>
-  {
-   'match' : '\\b(<<< i >>>)\\b'
-   'name' : 'support.type.other.renpy.python'
-  }
-<<% endfor %>>
-  {
    'match': '<\\=|>\\=|\\=\\=|<|>|\\!\\='
    'name': 'keyword.operator.comparison.python'
   }
@@ -135,6 +125,24 @@
    'match': '\\='
    'name': 'keyword.operator.assignment.python'
   }
+  {
+    'match' : '(label|menu)\\s*([a-zA-Z_][a-zA-Z_0-9]*)'
+    'captures':
+       '1':
+          'name' : "keyword.renpy.python"
+       '2':
+          'name' : "entity.name.section.renpy.python"
+  }
+  {
+   'match' : '\\b(<<< keyword_regex >>>)\\b'
+   'name' : 'keyword.renpy.python'
+  }
+<<% for i in property_regexes %>>
+  {
+   'match' : '\\b(<<< i >>>)\\b'
+   'name' : 'entity.other.attribute-name.renpy.python'
+  }
+<<% endfor %>>
   {
    'begin': '^\\s*(class)\\s+(?=[a-zA-Z_][a-zA-Z_0-9]*\\s*\\:)'
    'beginCaptures':
@@ -158,56 +166,6 @@
       '1':
        'name': 'storage.type.class.python'
    'end': '(\\))\\s*(?:(\\:)|(.*$\\n?))'
-   'endCaptures':
-      '1':
-       'name': 'punctuation.definition.inheritance.end.python'
-      '2':
-       'name': 'punctuation.section.class.begin.python'
-      '3':
-       'name': 'invalid.illegal.missing-section-begin.python'
-   'name': 'meta.class.python'
-   'patterns': [
-      {
-       'begin': '(?=[A-Za-z_][A-Za-z0-9_]*)'
-       'contentName': 'entity.name.type.class.python'
-       'end': '(?![A-Za-z0-9_])'
-       'patterns': [
-          {
-           'include': '#entity_name_class'
-          }
-        ]
-      }
-      {
-       'begin': '(\\()'
-       'beginCaptures':
-          '1':
-           'name': 'punctuation.definition.inheritance.begin.python'
-       'contentName': 'meta.class.inheritance.python'
-       'end': '(?=\\)|:)'
-       'patterns': [
-          {
-           'begin': '(?<=\\(|,)\\s*'
-           'contentName': 'entity.other.inherited-class.python'
-           'end': '\\s*(?:(,)|(?=\\)))'
-           'endCaptures':
-              '1':
-               'name': 'punctuation.separator.inheritance.python'
-           'patterns': [
-              {
-               'include': '$self'
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-  {
-   'begin': '^\\s*((jump)|(call)|(screen)|(label)|(menu)|(transform))\\s+(?=[a-zA-Z_][a-zA-Z_0-9]*\\s*)'
-   'beginCaptures':
-      '1':
-       'name': 'keyword.control.statement.renpy'
-   'end': '(\\n|\\()|\\:'
    'endCaptures':
       '1':
        'name': 'punctuation.definition.inheritance.end.python'
@@ -552,12 +510,6 @@
   {
    'captures':
       '1':
-       'name': 'keyword.control.statement.renpy'
-   'match': '\\b(menu)\\b'
-  }
-  {
-   'captures':
-      '1':
        'name': 'storage.type.function.python'
    'match': '\\b(def|lambda)\\b'
   }
@@ -575,10 +527,6 @@
   }
   {
    'match': '\\b(None|True|False|Ellipsis|NotImplemented)\\b'
-   'name': 'constant.language.python'
-  }
-  {
-   'match': '\\b(no_action|yes_action|no_action)\\b'
    'name': 'constant.language.python'
   }
   {
