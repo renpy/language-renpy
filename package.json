@@ -5,6 +5,14 @@
     "atom": "*",
     "node": "*"
   },
+  "main": "./lib/main",
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "2.0.0": "provide"
+      }
+    }
+  },
   "description": "Ren'py language support in Atom",
   "keywords": [
     "language",
