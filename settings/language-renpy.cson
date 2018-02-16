@@ -4,5 +4,5 @@
     'tabLength': 4
     'foldEndPattern': '^\\s*"""\\s*$'
     'commentStart': '# '
-    'increaseIndentPattern': '^\\s*(frame|style|class|def|elif|else|except|finally|for|if|try|with|while|menu|label|screen|window|hbox|vbox|init|python|imagemap|imagebutton|show|scene|block|choice|parallel|contains|mousearea|\"|transform|image)\\b.*:\\s*$'
+    'increaseIndentPattern' : ':\\s*$'
     'decreaseIndentPattern': '^\\s*(elif|else|except|finally)\\b.*:'
