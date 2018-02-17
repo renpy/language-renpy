@@ -1,27 +1,22 @@
 
 provider = require './provider'
-console.info 'renpy-provider init'
-cp = require 'child_process'
-cp.execFile('dir')
 
 module.exports =
-  provide: -> provider
-  config:
-    useAutocompleteProvider:
-      type: 'boolean'
-      default: true
-      order: 0
-      title: 'Enable Autocomplete Provider (Windows only for now)'
-      description: '''TODO'''
-    renpyExecutable:
-      type: 'string'
-      default: 'renpy.exe'
-      order: 1
-      title: 'Ren\'Py Executable Path'
-      description: '''TODO'''
-    projectsPath:
-      type: 'string'
-      default: ''
-      order: 2
-      title: 'Projects Directory'
-      description: '''TODO'''
+  activate: ->
+    console.info 'renpy-provider init'
+    @observe_texteditor = atom.workspace.observeActiveTextEditor((editor) ->
+      if editor? and provider.is_renpy_grammars(editor)
+        provider.status_tile.show()
+        provider.update_project_info(editor)
+    )
+
+  provide: -> provider.provider
+
+  consumeStatusBar: (statusBar) ->
+    @statusBarTile = statusBar.addLeftTile(item: provider.status_tile.tile, priority: -1)
+  deactivate: ->
+    @statusBarTile?.destroy()
+    @statusBarTile = null
+    @observe_texteditor.dispose()
+
+  config: require './config'

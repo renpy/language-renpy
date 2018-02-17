@@ -1,3 +1,4 @@
+# TODO: re-organize this file (it's messy, sorry)
 
 path = require 'path'
 fs = require 'fs'
@@ -6,6 +7,21 @@ cp = require 'child_process'
 is_busy = false
 navigation_data = null
 current_project = null
+
+class StatusTile
+  constructor: ->
+    @tile = document.createElement 'div'
+    @tile.classList.add 'renpy-statusbar'
+  show: ->
+    @tile.classList.add 'inline-block'
+  hide: ->
+    @tile.classList.remove 'inline-block'
+  text: (txt) ->
+    @tile.textContent = "Ren'Py: " + txt
+  clear: ->
+    @text current_project
+
+status_tile = new StatusTile
 
 sample_suggestion =
   text: 'Sample Suggestion: ok' # OR
@@ -59,6 +75,7 @@ get_transforms = (prefix) ->
 
 generate_navigation = (project) ->
   is_busy = true
+  status_tile.text "Updating project info..."
   renpy = renpy_executable()
   if renpy
     proj = atom.config.get('language-renpy.projectsPath')
@@ -66,12 +83,13 @@ generate_navigation = (project) ->
     if not fs.existsSync(path.dirname(dest))
       fs.mkdirSync(path.dirname(dest)) # TODO: add mkdir recursive
     cmd = ['--json-dump', dest, path.join(proj, project), 'quit']
-    console.log cmd
+    #console.log cmd
     ex = cp.execFile(renpy, cmd, (error, stdout, stderr) ->
       unless stderr
         navigation_data = require dest
         console.log navigation_data
         current_project = project
+        status_tile.text project
         is_busy = false
     )
   else
@@ -80,7 +98,7 @@ generate_navigation = (project) ->
 update_projects_path = ->
   is_busy = true
   console.log 'Updating projects path'
-  atom.notifications.addInfo('Looking for projects directory...')
+  status_tile.text 'Looking for projects directory...'
   renpy = renpy_executable()
   if renpy
     cmd = [path.dirname(renpy), 'get_projects_directory']
@@ -97,7 +115,7 @@ renpy_executable = ->
   renpy = atom.config.get('language-renpy.renpyExecutable')
   if fs.existsSync renpy
     return renpy
-  atom.notifications.addError('Ren\'Py Executable was not found/defined.')
+  status_tile.text "Ren'Py Executable was not found/defined."
   return false
 
 find_project_name = (file) ->
@@ -110,7 +128,20 @@ find_project_name = (file) ->
         return dirs[count-1]
     count-=1
 
-module.exports =
+is_renpy_grammars = (editor) ->
+  if not editor?
+    editor = atom.workspace.getActivePaneItem()
+  return editor.getGrammar().scopeName == "source.renpy"
+
+update_project_info = (editor, force_update=false) ->
+  if not editor?
+    editor = atom.workspace.getActivePaneItem()
+  proj = find_project_name(editor.getPath())
+  if proj?
+    if current_project != proj or force_update
+      generate_navigation(proj)
+
+provider =
   selector: '.source.renpy'
   disableForSelector: '.source.renpy .comment'
   #inclusionPriority: 1
@@ -119,6 +150,7 @@ module.exports =
   #filterSuggestions: true
 
   getSuggestions: ({editor, bufferPosition, scopeDescriptor, prefix, activatedManually}) ->
+    status_tile.show()
     new Promise (resolve) ->
       suggestions = []
       if not is_busy
@@ -126,9 +158,7 @@ module.exports =
           if atom.config.get('language-renpy.projectsPath') == ''
             update_projects_path()
           else if navigation_data == null
-            proj = find_project_name(editor.getPath())
-            if proj?
-              generate_navigation(proj)
+            update_project_info(editor)
           else
             console.log prefix
             suggestions = suggestions.concat(
@@ -137,3 +167,9 @@ module.exports =
               get_transforms(prefix)
             )
       resolve(suggestions)
+
+module.exports =
+  provider: provider
+  status_tile: status_tile
+  is_renpy_grammars: is_renpy_grammars
+  update_project_info: update_project_info
