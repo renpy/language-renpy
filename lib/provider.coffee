@@ -5,6 +5,7 @@ cp = require 'child_process'
 
 is_busy = false
 navigation_data = null
+current_project = null
 
 sample_suggestion =
   text: 'Sample Suggestion: ok' # OR
@@ -42,6 +43,20 @@ get_labels = (prefix) ->
   console.info suggestions
   return suggestions
 
+get_transforms = (prefix) ->
+  suggestions = []
+  if prefix.match /at/ # TODO: use bufferPosition for a better completion
+    transforms = navigation_data.location.transform
+    for t in Object.keys(transforms)
+      suggestions.push(
+        text: prefix.replace(/at/, (p) -> p+' '+t+',')
+        displayText: t
+        rightLabel: 'Transform at: '+transforms[t][0]+':'+transforms[t][1]
+        iconHTML: '<i class="icon-alignment-align"></i>'
+        type: 'method'
+      )
+  return suggestions
+
 generate_navigation = (project) ->
   is_busy = true
   renpy = renpy_executable()
@@ -56,6 +71,7 @@ generate_navigation = (project) ->
       unless stderr
         navigation_data = require dest
         console.log navigation_data
+        current_project = project
         is_busy = false
     )
   else
@@ -84,6 +100,16 @@ renpy_executable = ->
   atom.notifications.addError('Ren\'Py Executable was not found/defined.')
   return false
 
+find_project_name = (file) ->
+  dirs = file.replace(/\\/g, '/').split('/')
+  count = dirs.length
+  proj_root = atom.config.get('language-renpy.projectsPath')
+  while count > 0
+    if dirs[count] == 'game'
+      if fs.existsSync path.join(proj_root, dirs[count-1])
+        return dirs[count-1]
+    count-=1
+
 module.exports =
   selector: '.source.renpy'
   disableForSelector: '.source.renpy .comment'
@@ -100,10 +126,14 @@ module.exports =
           if atom.config.get('language-renpy.projectsPath') == ''
             update_projects_path()
           else if navigation_data == null
-            generate_navigation("tutorial") # hard-coded yet
+            proj = find_project_name(editor.getPath())
+            if proj?
+              generate_navigation(proj)
           else
+            console.log prefix
             suggestions = suggestions.concat(
               get_sample(prefix), # debug stuff
-              get_labels(prefix)
+              get_labels(prefix),
+              get_transforms(prefix)
             )
       resolve(suggestions)
