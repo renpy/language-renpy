@@ -395,7 +395,10 @@
    'match': '\\b(class)\\b'
   }
 
-
+  {
+   'match' : '\\$'
+   'name' : 'keyword.renpy.python'
+  }
   {
    'match' : '\\b(<<< keyword_regex >>>)\\b'
    'name' : 'keyword.renpy.python'
