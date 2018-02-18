@@ -1,6 +1,7 @@
 Original work Copyright (c) 2014 GitHub Inc.
+Modified work Copyright (c) 2016-2018 William Tumeo <tumeowilliam@gmail.com>
+Modified work Copyright (c) 2018 Tom Rothamel <pytom@bishoujo.us>
 
-Modified work Copyright (c) 2016 William Tumeo <tumeowilliam@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

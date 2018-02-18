@@ -1,3 +1,7 @@
+## 2.0.0
+* Project became part of the Ren'Py organization.
+* Generate keywords from information taken from Ren'Py.
+
 ## 1.6.1
 * Fix `default` keyword highlight;
 
