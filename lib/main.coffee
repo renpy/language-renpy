@@ -1,19 +1,23 @@
 
+renpy = require './renpy'
 provider = require './provider'
 
 module.exports =
   activate: ->
+    atom.commands.add('atom-workspace',
+      'renpy-command:run-game': renpy.run_game
+    )
     console.info 'renpy-provider init'
     @observe_texteditor = atom.workspace.observeActiveTextEditor((editor) ->
-      if editor? and provider.is_renpy_grammars(editor)
-        provider.status_tile.show()
-        provider.update_project_info(editor)
+      if editor? and renpy.is_renpy_grammars(editor)
+        renpy.status_tile.show()
+        renpy.update_project_info(editor)
     )
 
-  provide: -> provider.provider
+  provide: -> provider
 
-  consumeStatusBar: (statusBar) ->
-    @statusBarTile = statusBar.addLeftTile(item: provider.status_tile.tile, priority: -1)
+  status_bar: (statusBar) ->
+    @statusBarTile = statusBar.addLeftTile(item: renpy.status_tile.tile, priority: -1)
   deactivate: ->
     @statusBarTile?.destroy()
     @statusBarTile = null

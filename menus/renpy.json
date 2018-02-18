@@ -1,0 +1,18 @@
+{
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "Ren'Py",
+          "submenu": [
+            {
+              "label": "Run Game",
+              "command": "renpy-command:run-game"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
