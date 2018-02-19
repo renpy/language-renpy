@@ -8,6 +8,9 @@ module.exports =
       'renpy-command:run-game': renpy.run_game
     )
     atom.commands.add('atom-workspace',
+      'renpy-command:open-launcher': renpy.open_launcher
+    )
+    atom.commands.add('atom-workspace',
       'renpy-command:dump-navigation': ->
         renpy.update_project_info(null, true)
     )

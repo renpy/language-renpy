@@ -24,26 +24,35 @@ class RenPy
     @navigation_data = null
     @current_project = null
     @file_watcher = null
+    @launcher = false
 
+  get_valid_project_path: (project) ->
+    exec = @renpy_executable()
+    for projroot in [atom.config.get('language-renpy.projectsPath'), path.dirname(exec)]
+      if fs.existsSync path.join(projroot, project)
+        return path.join(projroot, project)
 
   generate_navigation: (project) ->
     @is_busy = true
-    @status_tile.text("Updating project info...")
+    @status_tile.text("Scanning the project...")
     exec = @renpy_executable()
     if exec
-      proj = atom.config.get('language-renpy.projectsPath')
+      proj = @get_valid_project_path(project)
       dest = @get_navigation_path(project)
-      if not fs.existsSync(path.dirname(dest))
-        fs.mkdirSync(path.dirname(dest)) # TODO: add mkdir recursive
-      cmd = ['--json-dump', dest, path.join(proj, project), 'quit']
-      #console.log cmd
+      @create_navigation_directory(dest)
+      cmd = ['--json-dump', dest, proj, 'quit']
       ex = cp.execFile(exec, cmd, (error, stdout, stderr) =>
         unless stderr
           if not @file_watcher?
             @update_navigation(dest, project)
+            @create_file_watcher(project)
       )
     else
       @is_busy = false
+
+  create_navigation_directory: (dest) ->
+    if not fs.existsSync(path.dirname(dest))
+      fs.mkdirSync(path.dirname(dest)) # TODO: add mkdir recursive
 
   update_navigation: (dest, project) ->
     @navigation_data = require dest
@@ -78,10 +87,9 @@ class RenPy
     return if not file? # Ignore `untitled` editors
     dirs = file.replace(/\\/g, '/').split('/')
     count = dirs.length
-    proj_root = atom.config.get('language-renpy.projectsPath')
     while count > 0
       if dirs[count] == 'game'
-        if fs.existsSync path.join(proj_root, dirs[count-1])
+        if @get_valid_project_path(dirs[count-1])
           return dirs[count-1]
       count-=1
 
@@ -90,14 +98,20 @@ class RenPy
       editor = atom.workspace.getActivePaneItem()
     proj = @find_project_name(editor.getPath())
     if proj?
+      if not @current_project?
+        @current_project = proj
+        @status_tile.text proj
       if force_update
         @generate_navigation(proj)
-      else
+      else if fs.existsSync @get_navigation_path(proj)
         @load_navigation(proj)
-      if not @file_watcher?
-        @file_watcher = fs.watch(@get_navigation_path(proj), null, (event, file) =>
-          @load_navigation(@current_project)
-        )
+        @create_file_watcher(proj)
+
+  create_file_watcher: (project) ->
+    if not @file_watcher?
+      @file_watcher = fs.watch(@get_navigation_path(project), null, (event, file) =>
+        @load_navigation(project)
+      )
 
   load_navigation: (project) ->
     @update_navigation(@get_navigation_path(project), project)
@@ -112,6 +126,14 @@ class RenPy
       editor = atom.workspace.getActivePaneItem()
     return editor.getGrammar().scopeName == "source.renpy"
 
+  open_launcher: (event) =>
+    exec = @renpy_executable()
+    if exec and not @launcher
+      @launcher = true
+      ex = cp.execFile(exec, [], (error, stdout, stderr) =>
+        @launcher = false
+      )
+
   run_game: (event) =>
     return if not @is_renpy_grammars()
     return if not @current_project?
@@ -120,7 +142,8 @@ class RenPy
     if exec
       projdir = atom.config.get('language-renpy.projectsPath')
       dest = @get_navigation_path(@current_project)
-      cmd = ['--json-dump', dest, path.join(projdir, @current_project), 'run']
+      @create_navigation_directory(dest)
+      cmd = ['--json-dump', dest, @get_valid_project_path(@current_project), 'run']
       ex = cp.execFile(exec, cmd, (error, stdout, stderr) =>
         @status_tile.text(@current_project)
         @load_navigation(@current_project)

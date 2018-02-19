@@ -11,7 +11,11 @@
               "command": "renpy-command:run-game"
             },
             {
-              "label": "Dump navigation",
+              "label": "Open Launcher",
+              "command": "renpy-command:open-launcher"
+            },
+            {
+              "label": "Dump Navigation",
               "command": "renpy-command:dump-navigation"
             }
           ]
