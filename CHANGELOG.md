@@ -1,6 +1,7 @@
 ## 2.0.0
 * Project became part of the Ren'Py organization.
 * Generate keywords from information taken from Ren'Py.
+* Some matches changed class, to be closer to how atom describes them.
 
 ## 1.6.1
 * Fix `default` keyword highlight;
