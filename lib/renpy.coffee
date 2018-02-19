@@ -1,3 +1,4 @@
+# TODO: Remove redundant code..
 path = require 'path'
 fs = require 'fs'
 cp = require 'child_process'
@@ -22,6 +23,8 @@ class RenPy
     @is_busy = false
     @navigation_data = null
     @current_project = null
+    @file_watcher = null
+
 
   generate_navigation: (project) ->
     @is_busy = true
@@ -29,14 +32,15 @@ class RenPy
     exec = @renpy_executable()
     if exec
       proj = atom.config.get('language-renpy.projectsPath')
-      dest = path.join(path.dirname(exec), 'tmp', project, 'navigation.json')
+      dest = @get_navigation_path(project)
       if not fs.existsSync(path.dirname(dest))
         fs.mkdirSync(path.dirname(dest)) # TODO: add mkdir recursive
       cmd = ['--json-dump', dest, path.join(proj, project), 'quit']
       #console.log cmd
       ex = cp.execFile(exec, cmd, (error, stdout, stderr) =>
         unless stderr
-          @update_navigation(dest, project)
+          if not @file_watcher?
+            @update_navigation(dest, project)
       )
     else
       @is_busy = false
@@ -71,6 +75,7 @@ class RenPy
     return false
 
   find_project_name: (file) ->
+    return if not file? # Ignore `untitled` editors
     dirs = file.replace(/\\/g, '/').split('/')
     count = dirs.length
     proj_root = atom.config.get('language-renpy.projectsPath')
@@ -85,8 +90,22 @@ class RenPy
       editor = atom.workspace.getActivePaneItem()
     proj = @find_project_name(editor.getPath())
     if proj?
-      if @current_project != proj or force_update
+      if force_update
         @generate_navigation(proj)
+      else
+        @load_navigation(proj)
+      if not @file_watcher?
+        @file_watcher = fs.watch(@get_navigation_path(proj), null, (event, file) =>
+          @load_navigation(@current_project)
+        )
+
+  load_navigation: (project) ->
+    @update_navigation(@get_navigation_path(project), project)
+
+  get_navigation_path: (project) ->
+    exec = @renpy_executable()
+    if exec
+      return path.join(path.dirname(exec), 'tmp', project, 'navigation.json')
 
   is_renpy_grammars: (editor) ->
     if not editor?
@@ -95,13 +114,16 @@ class RenPy
 
   run_game: (event) =>
     return if not @is_renpy_grammars()
+    return if not @current_project?
     @status_tile.text("Running "+@current_project)
     exec = @renpy_executable()
     if exec
       projdir = atom.config.get('language-renpy.projectsPath')
-      cmd = [path.join(projdir, @current_project), 'run']
+      dest = @get_navigation_path(@current_project)
+      cmd = ['--json-dump', dest, path.join(projdir, @current_project), 'run']
       ex = cp.execFile(exec, cmd, (error, stdout, stderr) =>
         @status_tile.text(@current_project)
+        @load_navigation(@current_project)
       )
 
 renpy = new RenPy

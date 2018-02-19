@@ -9,6 +9,10 @@
             {
               "label": "Run Game",
               "command": "renpy-command:run-game"
+            },
+            {
+              "label": "Dump navigation",
+              "command": "renpy-command:dump-navigation"
             }
           ]
         }

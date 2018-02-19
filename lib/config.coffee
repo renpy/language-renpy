@@ -4,14 +4,17 @@ module.exports =
     type: 'boolean'
     default: true
     order: 0
-    title: 'Enable Autocomplete Provider (Windows only for now)'
+    title: 'Enable Autocomplete Provider (Tested only on Windows and Linux)'
     description: '''TODO'''
   renpyExecutable:
     type: 'string'
-    default: 'renpy.exe'
+    default: 'path/to/renpy'
     order: 1
     title: 'Ren\'Py Executable Path'
-    description: '''TODO'''
+    description: '''
+    \nWindows: path/to/renpy.exe
+    \nLinux: path/to/renpy.sh
+    '''
   projectsPath:
     type: 'string'
     default: ''

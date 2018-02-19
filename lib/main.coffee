@@ -7,6 +7,10 @@ module.exports =
     atom.commands.add('atom-workspace',
       'renpy-command:run-game': renpy.run_game
     )
+    atom.commands.add('atom-workspace',
+      'renpy-command:dump-navigation': ->
+        renpy.update_project_info(null, true)
+    )
     console.info 'renpy-provider init'
     @observe_texteditor = atom.workspace.observeActiveTextEditor((editor) ->
       if editor? and renpy.is_renpy_grammars(editor)
