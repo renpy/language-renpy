@@ -1,3 +1,8 @@
+## 2.1.0
+* Mark all styles as .python.renpy, so it's possible to style Ren'Py
+  differently than Python. (Or to spell check only Ren'Py strings.)
+* Fix the highlighting of text tags and substitutions.
+
 ## 2.0.0
 * Project became part of the Ren'Py organization.
 * Generate keywords from information taken from Ren'Py.
