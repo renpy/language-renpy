@@ -24,32 +24,43 @@ get_labels = (prefix) ->
   suggestions = []
   if prefix.startsWith('call') or prefix.startsWith('jump')
     cmd = if prefix.startsWith('call') then 'call ' else 'jump '
-    labels = renpy.navigation_data.location.label
-    #console.log labels
-    for label in Object.keys(labels)
+    for label in Object.keys(renpy.labels)
       suggestions.push(
         text: cmd+label
         displayText: label
-        rightLabel: 'Label at: '+labels[label][0]+':'+labels[label][1]
+        rightLabel: 'Label at: '+renpy.labels[label][0]+':'+renpy.labels[label][1]
         iconHTML: '<i class="icon-tag"></i>'
         type: 'tag'
       )
-  #console.info suggestions
+  # console.info suggestions
   return suggestions
 
 get_transforms = (prefix) ->
   suggestions = []
   if prefix.match /at/ # TODO: use bufferPosition for a better completion
-    transforms = renpy.navigation_data.location.transform
-    for t in Object.keys(transforms)
+    for t in Object.keys(renpy.transforms)
       suggestions.push(
         text: prefix.replace(/at/, (p) -> p+' '+t+',')
         displayText: t
-        rightLabel: 'Transform at: '+transforms[t][0]+':'+transforms[t][1]
+        rightLabel: 'Transform at: '+renpy.transforms[t][0]+':'+renpy.transforms[t][1]
         iconHTML: '<i class="icon-alignment-align"></i>'
         type: 'method'
       )
   return suggestions
+
+get_characters = (prefix) ->
+  suggestions = []
+  if prefix.trim() == ''
+    for c in Object.keys(renpy.characters)
+      suggestions.push(
+        text: c
+        displayText: c
+        rightLabel: 'Character at: '+renpy.characters[c][0]+':'+renpy.characters[c][1]
+        iconHTML: '<i class="icon-person"></i>'
+        type: 'constant'
+      )
+  return suggestions
+
 
 provider =
   selector: '.source.renpy'
@@ -73,7 +84,8 @@ provider =
             suggestions = suggestions.concat(
               get_sample(prefix), # debug stuff
               get_labels(prefix),
-              get_transforms(prefix)
+              get_transforms(prefix),
+              get_characters(prefix),
             )
       resolve(suggestions)
 

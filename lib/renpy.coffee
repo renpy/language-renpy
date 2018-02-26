@@ -26,6 +26,12 @@ class RenPy
     @file_watcher = null
     @launcher = false
 
+    # cached info
+    @labels = {}
+    @transforms = {}
+    @defines = {}
+    @characters = {}
+
   get_valid_project_path: (project) ->
     exec = @renpy_executable()
     for projroot in [atom.config.get('language-renpy.projectsPath'), path.dirname(exec)]
@@ -56,9 +62,25 @@ class RenPy
 
   update_navigation: (dest, project) ->
     @navigation_data = require dest
+    @update_cache_info()
     @current_project = project
     @status_tile.text(project)
     @is_busy = false
+
+  update_cache_info: ->
+    @labels = @navigation_data.location.label
+    @transforms = @navigation_data.location.transform
+    @defines = @navigation_data.location.define
+    @characters = @get_project_characters(@defines)
+
+  get_project_characters: (defines) ->
+    chars = {}
+    for d in Object.keys(defines)
+      line = @get_script_line(defines[d][0], defines[d][1]-1)
+      if line?
+        if line.match(d+'\\s*=\\s*(?:Character|DynamicCharacter)')?
+          chars[d] = defines[d]
+    return chars
 
   update_projects_path: ->
     @is_busy = true
@@ -149,6 +171,14 @@ class RenPy
         @status_tile.text(@current_project)
         @load_navigation(@current_project)
       )
+
+  get_script_line: (script, line) ->
+    proj_path = @get_valid_project_path(@current_project)
+    script_path = path.join(proj_path, script)
+    if fs.existsSync script_path
+      file_txt = fs.readFileSync script_path, 'utf8'
+      return file_txt.split('\n')[line]
+    return
 
 renpy = new RenPy
 module.exports = renpy
