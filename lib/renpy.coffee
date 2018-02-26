@@ -119,7 +119,8 @@ class RenPy
   get_navigation_path: (project) ->
     exec = @renpy_executable()
     if exec
-      return path.join(path.dirname(exec), 'tmp', project, 'navigation.json')
+      proj_path = @get_valid_project_path(project)
+      return path.join(proj_path, 'game', 'saves', 'navigation.json')
 
   is_renpy_grammars: (editor) ->
     if not editor?
