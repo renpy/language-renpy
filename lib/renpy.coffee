@@ -31,6 +31,7 @@ class RenPy
     @transforms = {}
     @defines = {}
     @characters = {}
+    @images = {}
 
   get_valid_project_path: (project) ->
     exec = @renpy_executable()
@@ -72,6 +73,7 @@ class RenPy
     @transforms = @navigation_data.location.transform
     @defines = @navigation_data.location.define
     @characters = @get_project_characters(@defines)
+    @images = @get_project_images()
 
   get_project_characters: (defines) ->
     chars = {}
@@ -81,6 +83,18 @@ class RenPy
         if line.match(d+'\\s*=\\s*(?:Character|DynamicCharacter)')?
           chars[d] = defines[d]
     return chars
+
+  get_project_images: ->
+    script_txt = @get_script_text('game/script.rpy') # TODO: check all scripts?
+    images = {}
+    if script_txt?
+      l = 1
+      for line in script_txt.split('\n')
+        img = line.match(/image\s+([\w\s]+)\s*=/)
+        if img?
+          images[img[1].trim()] = ['game/script.rpy', l]
+        l++
+    return images
 
   update_projects_path: ->
     @is_busy = true
@@ -173,11 +187,16 @@ class RenPy
       )
 
   get_script_line: (script, line) ->
+    script_txt = @get_script_text(script)
+    if script_txt?
+      return script_txt.split('\n')[line]
+
+  get_script_text: (script) ->
     proj_path = @get_valid_project_path(@current_project)
     script_path = path.join(proj_path, script)
     if fs.existsSync script_path
       file_txt = fs.readFileSync script_path, 'utf8'
-      return file_txt.split('\n')[line]
+      return file_txt
     return
 
 renpy = new RenPy

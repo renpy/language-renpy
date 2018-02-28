@@ -50,17 +50,35 @@ get_transforms = (prefix) ->
 
 get_characters = (prefix) ->
   suggestions = []
-  if prefix.trim() == ''
-    for c in Object.keys(renpy.characters)
+  chars = Object.keys(renpy.characters)
+  for c in chars.filter((c) => prefix.trim() != c && c.startsWith(prefix.trim()))
+    suggestions.push(
+      text: c
+      displayText: c
+      rightLabel: 'Character at: '+renpy.characters[c][0]+':'+renpy.characters[c][1]
+      iconHTML: '<i class="icon-person"></i>'
+      type: 'constant'
+    )
+  return suggestions
+
+get_images = (prefix) ->
+  suggestions = []
+  # TODO: use bufferPosition for a better completion
+  if prefix.startsWith('show') or prefix.startsWith('hide') or prefix.startsWith('scene')
+    statement = 'show '
+    if prefix.startsWith('hide')
+      statement = 'hide '
+    else if prefix.startsWith('scene')
+      statement = 'scene '
+    for im in Object.keys(renpy.images)
       suggestions.push(
-        text: c
-        displayText: c
-        rightLabel: 'Character at: '+renpy.characters[c][0]+':'+renpy.characters[c][1]
-        iconHTML: '<i class="icon-person"></i>'
+        text: statement+im
+        displayText: im
+        rightLabel: 'Image at: '+renpy.images[im][0]+':'+renpy.images[im][1]
+        iconHTML: '<i class="icon-file-media"></i>'
         type: 'constant'
       )
   return suggestions
-
 
 provider =
   selector: '.source.renpy'
@@ -86,6 +104,7 @@ provider =
               get_labels(prefix),
               get_transforms(prefix),
               get_characters(prefix),
+              get_images(prefix),
             )
       resolve(suggestions)
 
