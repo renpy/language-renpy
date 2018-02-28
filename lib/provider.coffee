@@ -24,7 +24,7 @@ get_labels = (prefix) ->
   suggestions = []
   if prefix.startsWith('call') or prefix.startsWith('jump')
     cmd = if prefix.startsWith('call') then 'call ' else 'jump '
-    for label in Object.keys(renpy.labels)
+    for label in Object.keys(renpy.labels).sort()
       suggestions.push(
         text: cmd+label
         displayText: label
@@ -38,7 +38,7 @@ get_labels = (prefix) ->
 get_transforms = (prefix) ->
   suggestions = []
   if prefix.match /at/ # TODO: use bufferPosition for a better completion
-    for t in Object.keys(renpy.transforms)
+    for t in Object.keys(renpy.transforms).sort()
       suggestions.push(
         text: prefix.replace(/at/, (p) -> p+' '+t+',')
         displayText: t
@@ -50,7 +50,7 @@ get_transforms = (prefix) ->
 
 get_characters = (prefix) ->
   suggestions = []
-  chars = Object.keys(renpy.characters)
+  chars = Object.keys(renpy.characters).sort()
   for c in chars.filter((c) => prefix.trim() != c && c.startsWith(prefix.trim()))
     suggestions.push(
       text: c
@@ -70,7 +70,7 @@ get_images = (prefix) ->
       statement = 'hide '
     else if prefix.startsWith('scene')
       statement = 'scene '
-    for im in Object.keys(renpy.images)
+    for im in Object.keys(renpy.images).sort()
       suggestions.push(
         text: statement+im
         displayText: im
