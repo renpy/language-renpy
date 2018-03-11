@@ -85,15 +85,19 @@ class RenPy
     return chars
 
   get_project_images: ->
-    script_txt = @get_script_text('game/script.rpy') # TODO: check all scripts?
     images = {}
-    if script_txt?
-      l = 1
-      for line in script_txt.split('\n')
-        img = line.match(/image\s+([\w\s]+)\s*=/)
-        if img?
-          images[img[1].trim()] = ['game/script.rpy', l]
-        l++
+    projpath = path.join(@get_valid_project_path(@current_project), 'game')
+    fs.readdirSync(projpath).forEach( (file) =>
+      if file.endsWith('rpy')
+        script_txt = @get_script_text("game/#{file}")
+        if script_txt?
+          l = 1
+          for line in script_txt.split('\n')
+            img = line.match(/image\s+([\w\s]+)\s*=/)
+            if img?
+              images[img[1].trim()] = ["game/#{file}", l]
+            l++
+    )
     return images
 
   update_projects_path: ->

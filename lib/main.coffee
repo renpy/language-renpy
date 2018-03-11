@@ -14,12 +14,23 @@ module.exports =
       'renpy-command:dump-navigation': ->
         renpy.update_project_info(null, true)
     )
-    console.info 'renpy-provider init'
-    @observe_texteditor = atom.workspace.observeActiveTextEditor((editor) ->
+    atom.commands.add('atom-workspace',
+      'core:save': (event) ->
+        if renpy.is_renpy_grammars()
+          renpy.update_project_info()
+    )
+    @observe_texteditor = atom.workspace.observeActiveTextEditor((editor) =>
       if editor? and renpy.is_renpy_grammars(editor)
         renpy.status_tile.show()
         renpy.update_project_info(editor)
+        @remove_texteditor_observer()
     )
+    console.info 'renpy-provider init'
+
+  remove_texteditor_observer: ->
+    if @observe_texteditor?
+      @observe_texteditor.dispose()
+      @observe_texteditor = null
 
   provide: -> provider
 
@@ -28,6 +39,6 @@ module.exports =
   deactivate: ->
     @statusBarTile?.destroy()
     @statusBarTile = null
-    @observe_texteditor.dispose()
+    @remove_texteditor_observer()
 
   config: require './config'
