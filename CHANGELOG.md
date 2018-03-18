@@ -1,3 +1,7 @@
+## 2.2.0
+* Ensure that [[ and {{ prevent succeeding text from being handled as
+  a text tag or substitution.
+
 ## 2.1.0
 * Mark all styles as .python.renpy, so it's possible to style Ren'Py
   differently than Python. (Or to spell check only Ren'Py strings.)
