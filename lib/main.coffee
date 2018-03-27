@@ -15,6 +15,9 @@ module.exports =
         renpy.update_project_info(null, true)
     )
     atom.commands.add('atom-workspace',
+      'renpy-command:run-warp': renpy.run_warp
+    )
+    atom.commands.add('atom-workspace',
       'core:save': (event) ->
         if renpy.is_renpy_grammars()
           renpy.update_project_info()

@@ -181,10 +181,32 @@ class RenPy
     @status_tile.text("Running "+@current_project)
     exec = @renpy_executable()
     if exec
-      projdir = atom.config.get('language-renpy.projectsPath')
       dest = @get_navigation_path(@current_project)
       @create_navigation_directory(dest)
       cmd = ['--json-dump', dest, @get_valid_project_path(@current_project), 'run']
+      ex = cp.execFile(exec, cmd, (error, stdout, stderr) =>
+        @status_tile.text(@current_project)
+        @load_navigation(@current_project)
+      )
+
+  run_warp: (event) =>
+    return if not @is_renpy_grammars()
+    return if not @current_project?
+
+    editor = atom.workspace.getActivePaneItem()
+    return if not editor?
+
+    @status_tile.text("Warping "+@current_project)
+
+    proj_path = @get_valid_project_path(@current_project)
+    script = editor.getPath().replace(path.join(proj_path, 'game/'), '').replace('\\', '/')
+    line = editor.getCursorBufferPosition().row+1
+    console.log script
+    exec = @renpy_executable()
+    if exec
+      dest = @get_navigation_path(@current_project)
+      @create_navigation_directory(dest)
+      cmd = [ proj_path, '--warp', "#{script}:#{line}"]
       ex = cp.execFile(exec, cmd, (error, stdout, stderr) =>
         @status_tile.text(@current_project)
         @load_navigation(@current_project)

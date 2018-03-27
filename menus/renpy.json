@@ -22,5 +22,18 @@
         }
       ]
     }
-  ]
+  ],
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Ren'Py",
+        "submenu": [
+          {
+            "label": "Warp to a Line",
+            "command": "renpy-command:run-warp"
+          }
+        ]
+      }
+    ]
+  }
 }
