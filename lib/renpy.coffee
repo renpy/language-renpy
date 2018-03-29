@@ -6,13 +6,24 @@ cp = require 'child_process'
 class StatusTile
   constructor: ->
     @tile = document.createElement 'div'
+    @tile.innerHTML = """
+      <div class="tile-title"></div>
+      <div class="tile-run icon-playback-play"></div>
+      <div class="tile-launcher icon-browser"></div>
+      <div class="tile-info"></div>
+    """
     @tile.classList.add 'renpy-statusbar'
+    @tile.firstElementChild.textContent = "Ren'Py"
+    @trun = @tile.children[1]
+    @tlauncher = @tile.children[2]
+    @tinfo = @tile.children[3]
+
   show: ->
     @tile.classList.add 'inline-block'
   hide: ->
     @tile.classList.remove 'inline-block'
   text: (txt) ->
-    @tile.textContent = "Ren'Py: " + txt
+    @tinfo.textContent = txt
   clear: ->
     @text ''
 
@@ -20,9 +31,12 @@ class StatusTile
 class RenPy
   constructor: ->
     @status_tile = new StatusTile
+    @status_tile.trun.addEventListener('click', @run_game)
+    @status_tile.tlauncher.addEventListener('click', @open_launcher)
     @is_busy = false
     @navigation_data = null
     @current_project = null
+    @project_name = ''
     @file_watcher = null
     @launcher = false
 
@@ -65,7 +79,8 @@ class RenPy
     @navigation_data = require dest
     @update_cache_info()
     @current_project = project
-    @status_tile.text(project)
+    @project_name = @navigation_data.name
+    @status_tile.text(@project_name)
     @is_busy = false
 
   update_cache_info: ->
@@ -140,7 +155,7 @@ class RenPy
     if proj?
       if not @current_project?
         @current_project = proj
-        @status_tile.text proj
+        @status_tile.text @project_name
       if force_update
         @generate_navigation(proj)
       else if fs.existsSync @get_navigation_path(proj)
@@ -178,14 +193,14 @@ class RenPy
   run_game: (event) =>
     return if not @is_renpy_grammars()
     return if not @current_project?
-    @status_tile.text("Running "+@current_project)
+    @status_tile.text("Running "+@project_name)
     exec = @renpy_executable()
     if exec
       dest = @get_navigation_path(@current_project)
       @create_navigation_directory(dest)
       cmd = ['--json-dump', dest, @get_valid_project_path(@current_project), 'run']
       ex = cp.execFile(exec, cmd, (error, stdout, stderr) =>
-        @status_tile.text(@current_project)
+        @status_tile.text(@project_name)
         @load_navigation(@current_project)
       )
 
@@ -196,7 +211,7 @@ class RenPy
     editor = atom.workspace.getActivePaneItem()
     return if not editor?
 
-    @status_tile.text("Warping "+@current_project)
+    @status_tile.text("Warping "+@project_name)
 
     proj_path = @get_valid_project_path(@current_project)
     script = editor.getPath().replace(path.join(proj_path, 'game/'), '').replace('\\', '/')
@@ -208,7 +223,7 @@ class RenPy
       @create_navigation_directory(dest)
       cmd = [ proj_path, '--warp', "#{script}:#{line}"]
       ex = cp.execFile(exec, cmd, (error, stdout, stderr) =>
-        @status_tile.text(@current_project)
+        @status_tile.text(@project_name)
         @load_navigation(@current_project)
       )
 
@@ -226,4 +241,5 @@ class RenPy
     return
 
 renpy = new RenPy
+window.renpy_ = renpy
 module.exports = renpy

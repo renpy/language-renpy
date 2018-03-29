@@ -39,6 +39,9 @@ module.exports =
 
   status_bar: (statusBar) ->
     @statusBarTile = statusBar.addLeftTile(item: renpy.status_tile.tile, priority: -1)
+    atom.tooltips.add(renpy.status_tile.trun, {"title": "Run game"})
+    atom.tooltips.add(renpy.status_tile.tlauncher, {"title": "Open Ren'Py Launcher"})
+
   deactivate: ->
     @statusBarTile?.destroy()
     @statusBarTile = null
