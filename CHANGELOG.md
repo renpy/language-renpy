@@ -1,5 +1,5 @@
 ## 2.3.0
-* Add support for the new AttributeImage sublanguage.
+* Add support for the new layered image sublangage.
 
 ## 2.2.0
 * Ensure that [[ and {{ prevent succeeding text from being handled as
