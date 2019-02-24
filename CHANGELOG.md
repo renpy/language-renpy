@@ -1,7 +1,8 @@
-## 2.4.0
+## 2.5.0
 * Update for Ren'Py 7.1.4.
+* Add support for spell-checking using linter-spell.
 
-## 2.3.0
+## 2.3.0 / 2.4.0
 * Add support for the new layered image sublangage.
 
 ## 2.2.0
