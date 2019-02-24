@@ -1,3 +1,6 @@
+## 2.4.0
+* Update for Ren'Py 7.1.4.
+
 ## 2.3.0
 * Add support for the new layered image sublangage.
 
