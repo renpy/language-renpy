@@ -943,7 +943,7 @@
    'disabled': 0
    'patterns': [
       {
-       'include': 'source.regexp.python.renpy'
+       'include': 'source.regexp.python'
       }
     ]
   'string_quoted_double':
