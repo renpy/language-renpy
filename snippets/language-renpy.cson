@@ -361,9 +361,3 @@
     prefix: 'ww'
     body: '{w=${1:wait time}}'
     leftLabelHTML: '<span title="Text tag" class="renpy-snippet renpy-texttag">T</span>'
-
-
-'.source.renpy:not(.string)':
-  'self':
-    prefix: '.'
-    body: 'self.'
