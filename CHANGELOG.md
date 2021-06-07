@@ -1,3 +1,6 @@
+## 2.6.0
+* Update for Ren'Py 7.4.6
+
 ## 2.5.0
 * Update for Ren'Py 7.1.4.
 * Add support for spell-checking using linter-spell.
