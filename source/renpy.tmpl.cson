@@ -103,7 +103,7 @@
       '1':
        'name': 'keyword.other.python.renpy'
    'comment': 'keywords that haven\'t fit into other groups (yet).'
-   'match': '\\b(assert|del|exec|print)\\b'
+   'match': '\\b(assert|del|exec|print|match|case)\\b'
   }
   {
    'match': '<>'
@@ -118,11 +118,11 @@
    'name': 'keyword.operator.assignment.augmented.python.renpy'
   }
   {
-   'match': '\\+|\\-|\\*|\\*\\*|/|//|%|<<|>>|&|\\||\\^|~'
+   'match': '\\+|\\-|\\*|\\*\\*|/|//|%|@|<<|>>|&|\\||\\^|~'
    'name': 'keyword.operator.arithmetic.python.renpy'
   }
   {
-   'match': '\\='
+   'match': '\\=|\\:\\='
    'name': 'keyword.operator.assignment.python.renpy'
   }
   {
@@ -721,7 +721,7 @@
   'docstrings':
    'patterns': [
       {
-       'begin': '^\\s*(?=[uU]?[rR]?""")'
+       'begin': '^\\s*(?=[fuUb]?[rR]?""")'
        'end': '(?<=""")'
        'name': 'comment.block.python.renpy'
        'patterns': [
@@ -731,7 +731,7 @@
         ]
       }
       {
-       'begin': '^\\s*(?=[uU]?[rR]?\'\'\')'
+       'begin': '^\\s*(?=[fuUb]?[rR]?\'\'\')'
        'end': '(?<=\'\'\')'
        'name': 'comment.block.python.renpy'
        'patterns': [
@@ -877,7 +877,7 @@
   'generic_names':
    'match': '[A-Za-z_][A-Za-z0-9_]*'
   'illegal_names':
-   'match': '\\b(and|as|assert|break|class|continue|def|del|elif|else|except|exec|finally|for|global|if|import|in|is|lambda|nonlocal|not|or|print|raise|try|while|with|yield)\\b'
+   'match': '\\b(and|as|assert|async|await|break|class|continue|def|del|elif|else|except|exec|finally|for|global|if|import|in|is|lambda|nonlocal|not|or|print|raise|try|while|with|yield)\\b'
    'name': 'invalid.illegal.name.python.renpy'
   'keyword_arguments':
    'begin': '\\b([a-zA-Z_][a-zA-Z_0-9]*)\\s*(=)(?!=)'
@@ -907,7 +907,7 @@
    'match': '(\\\\)(.*)$\\n?'
   'magic_function_names':
    'comment': 'these methods have magic interpretation by python and are generally called indirectly through syntactic constructs'
-   'match': '(?x)\\b(__(?:\n\t\t\t\t\t\tabs|add|and|cmp|coerce|complex|contains|del|delattr|\n\t\t\t\t\t\tdelete|delitem|delslice|div|divmod|enter|eq|exit|float|\n\t\t\t\t\t\tfloordiv|ge|get|getattr|getattribute|getitem|getslice|gt|\n\t\t\t\t\t\thash|hex|iadd|iand|idiv|ifloordiv|ilshift|imod|imul|init|\n\t\t\t\t\t\tint|invert|ior|ipow|irshift|isub|iter|itruediv|ixor|le|len|\n\t\t\t\t\t\tlong|lshift|lt|mod|mul|ne|neg|new|nonzero|oct|or|pos|pow|\n\t\t\t\t\t\tradd|rand|rdiv|rdivmod|repr|rfloordiv|rlshift|rmod|rmul|ror|\n\t\t\t\t\t\trpow|rrshift|rshift|rsub|rtruediv|rxor|set|setattr|setitem|\n\t\t\t\t\t\tsetslice|str|sub|truediv|unicode|xor\n\t\t\t\t\t)__)\\b'
+   'match': '(?x)\\b(__(?:abs|add|and|cmp|coerce|complex|contains|del|delattr|delete|delitem|delslice|div|divmod|enter|eq|exit|float|floordiv|ge|get|getattr|getattribute|getitem|getslice|gt|hash|hex|iadd|iand|idiv|ifloordiv|ilshift|imod|imul|init|int|invert|ior|ipow|irshift|isub|iter|itruediv|ixor|le|len|long|lshift|lt|mod|mul|ne|neg|new|nonzero|oct|or|pos|pow|radd|rand|rdiv|rdivmod|repr|rfloordiv|rlshift|rmod|rmul|ror|rpow|rrshift|rshift|rsub|rtruediv|rxor|set|setattr|setitem|setslice|str|sub|truediv|unicode|xor)__)\\b'
    'name': 'support.function.magic.python.renpy'
   'magic_variable_names':
    'comment': 'magic variables which a class/module may have.'
@@ -924,7 +924,7 @@
   'string_quoted_double':
    'patterns': [
       {
-       'begin': '([uU]r)(""")'
+       'begin': '([fuUb]r)(""")'
        'beginCaptures':
           '1':
            'name': 'storage.type.string.python.renpy'
@@ -955,7 +955,7 @@
         ]
       }
       {
-       'begin': '([uU]R)(""")'
+       'begin': '([fuUb]R)(""")'
        'beginCaptures':
           '1':
            'name': 'storage.type.string.python.renpy'
@@ -1036,7 +1036,7 @@
         ]
       }
       {
-       'begin': '([uU])(""")'
+       'begin': '([fuUb])(""")'
        'beginCaptures':
           '1':
            'name': 'storage.type.string.python.renpy'
@@ -1080,11 +1080,11 @@
           '4':
            'name': 'punctuation.definition.string.end.python.renpy'
        'comment': 'double-quoted raw string'
-       'match': '([uU]r)(")((?:[^"\\\\]|\\\\.)*)(")'
+       'match': '([fuUb]r)(")((?:[^"\\\\]|\\\\.)*)(")'
        'name': 'string.quoted.double.single-line.unicode-raw-regex.python.renpy'
       }
       {
-       'begin': '([uU]R)(")'
+       'begin': '([fuUb]R)(")'
        'beginCaptures':
           '1':
            'name': 'storage.type.string.python.renpy'
@@ -1160,7 +1160,7 @@
         ]
       }
       {
-       'begin': '([uU])(")'
+       'begin': '([fuUb])(")'
        'beginCaptures':
           '1':
            'name': 'storage.type.string.python.renpy'
@@ -1252,7 +1252,7 @@
        'name': 'string.quoted.single.single-line.python.renpy'
       }
       {
-       'begin': '([uU]r)(\'\'\')'
+       'begin': '([fuUb]r)(\'\'\')'
        'beginCaptures':
           '1':
            'name': 'storage.type.string.python.renpy'
@@ -1283,7 +1283,7 @@
         ]
       }
       {
-       'begin': '([uU]R)(\'\'\')'
+       'begin': '([fuUb]R)(\'\'\')'
        'beginCaptures':
           '1':
            'name': 'storage.type.string.python.renpy'
@@ -1364,7 +1364,7 @@
         ]
       }
       {
-       'begin': '([uU])(\'\'\')'
+       'begin': '([fuUb])(\'\'\')'
        'beginCaptures':
           '1':
            'name': 'storage.type.string.python.renpy'
@@ -1408,11 +1408,11 @@
           '4':
            'name': 'punctuation.definition.string.end.python.renpy'
        'comment': 'single quoted raw string'
-       'match': '([uU]r)(\')((?:[^\'\\\\]|\\\\.)*)(\')'
+       'match': '([fuUb]r)(\')((?:[^\'\\\\]|\\\\.)*)(\')'
        'name': 'string.quoted.single.single-line.unicode-raw-regex.python.renpy'
       }
       {
-       'begin': '([uU]R)(\')'
+       'begin': '([fuUb]R)(\')'
        'beginCaptures':
           '1':
            'name': 'storage.type.string.python.renpy'
@@ -1484,7 +1484,7 @@
         ]
       }
       {
-       'begin': '([uU])(\')'
+       'begin': '([fuUb])(\')'
        'beginCaptures':
           '1':
            'name': 'storage.type.string.python.renpy'
