@@ -1,3 +1,6 @@
+## 2.8.0
+* Add async and await keywords.
+
 ## 2.7.0
 * Update for Ren'Py 7.4.6
 * Add support for some Python 3 syntax.

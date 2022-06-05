@@ -103,7 +103,7 @@
       '1':
        'name': 'keyword.other.python.renpy'
    'comment': 'keywords that haven\'t fit into other groups (yet).'
-   'match': '\\b(assert|del|exec|print|match|case)\\b'
+   'match': '\\b(assert|del|exec|print|match|case|async|await)\\b'
   }
   {
    'match': '<>'
