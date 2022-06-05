@@ -618,6 +618,9 @@
    'include': '#string_quoted_double'
   }
   {
+    'include': '#string_quoted_backtick'
+  }
+  {
    'include': '#dotted_name'
   }
   {
@@ -762,6 +765,16 @@
        'patterns': [
           {
            'include': '#string_quoted_single'
+          }
+        ]
+      }
+      {
+       'begin': '^\\s*(?=[uU]?[rR]?```)'
+       'end': '(?<=```)'
+       'name': 'comment.block.python.renpy'
+       'patterns': [
+          {
+           'include': '#string_quoted_backtick'
           }
         ]
       }
@@ -1583,6 +1596,326 @@
         ]
       }
     ]
+  'string_quoted_backtick':
+   'patterns': [
+      {
+       'captures':
+          '1':
+           'name': 'punctuation.definition.string.begin.python.renpy'
+          '2':
+           'name': 'punctuation.definition.string.end.python.renpy'
+          '3':
+           'name': 'meta.empty-string.single.python.renpy'
+       'match': '(?<!`)(`)((`))(?!`)'
+       'name': 'string.quoted.single.single-line.python.renpy'
+      }
+      {
+       'begin': '([uU]r)(```)'
+       'beginCaptures':
+          '1':
+           'name': 'storage.type.string.python.renpy'
+          '2':
+           'name': 'punctuation.definition.string.begin.python.renpy'
+       'comment': 'single quoted unicode-raw string'
+       'end': '((?<=```)(`)``|```)'
+       'endCaptures':
+          '1':
+           'name': 'punctuation.definition.string.end.python.renpy'
+          '2':
+           'name': 'meta.empty-string.single.python.renpy'
+       'name': 'string.quoted.single.block.unicode-raw-regex.python.renpy'
+       'patterns': [
+          { 'include': '#escaped_placeholder' }
+          {
+           'include': '#constant_placeholder'
+          }
+          {
+           'include': '#escaped_unicode_char'
+          }
+          {
+           'include': '#escaped_char'
+          }
+          {
+           'include': '#regular_expressions'
+          }
+        ]
+      }
+      {
+       'begin': '([uU]R)(```)'
+       'beginCaptures':
+          '1':
+           'name': 'storage.type.string.python.renpy'
+          '2':
+           'name': 'punctuation.definition.string.begin.python.renpy'
+       'comment': 'single quoted unicode-raw string'
+       'end': '((?<=```)(`)``|```)'
+       'endCaptures':
+          '1':
+           'name': 'punctuation.definition.string.end.python.renpy'
+          '2':
+           'name': 'meta.empty-string.single.python.renpy'
+       'name': 'string.quoted.single.block.unicode-raw.python.renpy'
+       'patterns': [
+          { 'include': '#escaped_placeholder' }
+          {
+           'include': '#constant_placeholder'
+          }
+          {
+           'include': '#escaped_unicode_char'
+          }
+          {
+           'include': '#escaped_char'
+          }
+        ]
+      }
+      {
+       'begin': '(r)(```)'
+       'beginCaptures':
+          '1':
+           'name': 'storage.type.string.python.renpy'
+          '2':
+           'name': 'punctuation.definition.string.begin.python.renpy'
+       'comment': 'single quoted raw string'
+       'end': '((?<=```)(`)``|```)'
+       'endCaptures':
+          '1':
+           'name': 'punctuation.definition.string.end.python.renpy'
+          '2':
+           'name': 'meta.empty-string.single.python.renpy'
+       'name': 'string.quoted.single.block.raw-regex.python.renpy'
+       'patterns': [
+          { 'include': '#escaped_placeholder' }
+          {
+           'include': '#constant_placeholder'
+          }
+          {
+           'include': '#escaped_char'
+          }
+          {
+           'include': '#regular_expressions'
+          }
+        ]
+      }
+      {
+       'begin': '(R)(```)'
+       'beginCaptures':
+          '1':
+           'name': 'storage.type.string.python.renpy'
+          '2':
+           'name': 'punctuation.definition.string.begin.python.renpy'
+       'comment': 'single quoted raw string'
+       'end': '((?<=```)(`)``|```)'
+       'endCaptures':
+          '1':
+           'name': 'punctuation.definition.string.end.python.renpy'
+          '2':
+           'name': 'meta.empty-string.single.python.renpy'
+       'name': 'string.quoted.single.block.raw.python.renpy'
+       'patterns': [
+          { 'include': '#escaped_placeholder' }
+          {
+           'include': '#constant_placeholder'
+          }
+          {
+           'include': '#escaped_char'
+          }
+        ]
+      }
+      {
+       'begin': '([uU])(```)'
+       'beginCaptures':
+          '1':
+           'name': 'storage.type.string.python.renpy'
+          '2':
+           'name': 'punctuation.definition.string.begin.python.renpy'
+       'comment': 'single quoted unicode string'
+       'end': '((?<=```)(`)``|```)'
+       'endCaptures':
+          '1':
+           'name': 'punctuation.definition.string.end.python.renpy'
+          '2':
+           'name': 'meta.empty-string.single.python.renpy'
+       'name': 'string.quoted.single.block.unicode.python.renpy'
+       'patterns': [
+          { 'include': '#escaped_placeholder' }
+          {
+           'include': '#constant_placeholder'
+          }
+          {
+           'include': '#escaped_unicode_char'
+          }
+          {
+           'include': '#escaped_char'
+          }
+        ]
+      }
+      {
+       'captures':
+          '1':
+           'name': 'storage.type.string.python.renpy'
+          '2':
+           'name': 'punctuation.definition.string.begin.python.renpy'
+          '3':
+           'patterns': [
+              { 'include': '#escaped_placeholder' }
+              {'include': '#constant_placeholder'}
+              {'include': '#escaped_unicode_char'}
+              {'include': '#escaped_char'}
+              {'include': '#regular_expressions'}
+            ]
+          '4':
+           'name': 'punctuation.definition.string.end.python.renpy'
+       'comment': 'single quoted raw string'
+       'match': '([uU]r)(`)((?:[^`\\\\]|\\\\.)*)(`)'
+       'name': 'string.quoted.single.single-line.unicode-raw-regex.python.renpy'
+      }
+      {
+       'begin': '([uU]R)(`)'
+       'beginCaptures':
+          '1':
+           'name': 'storage.type.string.python.renpy'
+          '2':
+           'name': 'punctuation.definition.string.begin.python.renpy'
+       'comment': 'single quoted raw string'
+       'end': '(`)'
+       'endCaptures':
+          '1':
+           'name': 'punctuation.definition.string.end.python.renpy'
+          '2':
+           'name': 'invalid.illegal.unclosed-string.python.renpy'
+       'name': 'string.quoted.single.single-line.unicode-raw.python.renpy'
+       'patterns': [
+          { 'include': '#escaped_placeholder' }
+          {
+           'include': '#constant_placeholder'
+          }
+          {
+           'include': '#escaped_unicode_char'
+          }
+          {
+           'include': '#escaped_char'
+          }
+        ]
+      }
+      {
+       'captures':
+          '1':
+           'name': 'storage.type.string.python.renpy'
+          '2':
+           'name': 'punctuation.definition.string.begin.python.renpy'
+          '3':
+           'patterns': [
+              { 'include': '#escaped_placeholder' }
+              {'include': '#constant_placeholder'}
+              {'include': '#escaped_char'}
+              {'include': '#regular_expressions'}
+            ]
+          '4':
+           'name': 'punctuation.definition.string.end.python.renpy'
+       'comment': 'single quoted raw string'
+       'match': '(r)(`)((?:[^`\\\\]|\\\\.)*)(`)'
+       'name': 'string.quoted.single.single-line.raw-regex.python.renpy'
+      }
+      {
+       'begin': '(R)(`)'
+       'beginCaptures':
+          '1':
+           'name': 'storage.type.string.python.renpy'
+          '2':
+           'name': 'punctuation.definition.string.begin.python.renpy'
+       'comment': 'single quoted raw string'
+       'end': '(`)|(\\n)'
+       'endCaptures':
+          '1':
+           'name': 'punctuation.definition.string.end.python.renpy'
+          '2':
+           'name': 'invalid.illegal.unclosed-string.python.renpy'
+       'name': 'string.quoted.single.single-line.raw.python.renpy'
+       'patterns': [
+          { 'include': '#escaped_placeholder' }
+          {
+           'include': '#constant_placeholder'
+          }
+          {
+           'include': '#escaped_char'
+          }
+        ]
+      }
+      {
+       'begin': '([uU])(`)'
+       'beginCaptures':
+          '1':
+           'name': 'storage.type.string.python.renpy'
+          '2':
+           'name': 'punctuation.definition.string.begin.python.renpy'
+       'comment': 'single quoted unicode string'
+       'end': '(`)'
+       'endCaptures':
+          '1':
+           'name': 'punctuation.definition.string.end.python.renpy'
+          '2':
+           'name': 'invalid.illegal.unclosed-string.python.renpy'
+       'name': 'string.quoted.single.single-line.unicode.python.renpy'
+       'patterns': [
+          { 'include': '#escaped_placeholder' }
+          {
+           'include': '#constant_placeholder'
+          }
+          {
+           'include': '#escaped_unicode_char'
+          }
+          {
+           'include': '#escaped_char'
+          }
+        ]
+      }
+      {
+       'begin': '(```)'
+       'beginCaptures':
+          '1':
+           'name': 'punctuation.definition.string.begin.python.renpy'
+       'comment': 'single quoted string'
+       'end': '((?<=```)(`)``|```)'
+       'endCaptures':
+          '1':
+           'name': 'punctuation.definition.string.end.python.renpy'
+          '2':
+           'name': 'meta.empty-string.single.python.renpy'
+       'name': 'string.quoted.single.block.python.renpy'
+       'patterns': [
+          { 'include': '#escaped_placeholder' }
+          {
+           'include': '#constant_placeholder'
+          }
+          {
+           'include': '#escaped_char'
+          }
+        ]
+      }
+      {
+       'begin': '(`)'
+       'beginCaptures':
+          '1':
+           'name': 'punctuation.definition.string.begin.python.renpy'
+       'comment': 'single quoted string'
+       'end': '(`)'
+       'endCaptures':
+          '1':
+           'name': 'punctuation.definition.string.end.python.renpy'
+          '2':
+           'name': 'invalid.illegal.unclosed-string.python.renpy'
+       'name': 'string.quoted.single.single-line.python.renpy'
+       'patterns': [
+          { 'include': '#escaped_placeholder' }
+          {
+           'include': '#constant_placeholder'
+          }
+          {
+           'include': '#escaped_char'
+          }
+        ]
+      }
+    ]
   'strings':
    'patterns': [
       {
@@ -1590,5 +1923,8 @@
       }
       {
        'include': '#string_quoted_single'
+      }
+      {
+        'include': '#string_quoted_backtick'
       }
     ]
